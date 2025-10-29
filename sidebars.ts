@@ -47,6 +47,14 @@ const sidebars: SidebarsConfig = {
       label: '🎯 Core Features',
       items: [
         'backend/features/csv-mapping',
+        'backend/features/scheduler',
+      ],
+    },
+    {
+      type: 'category',
+      label: '📦 Archive',
+      items: [
+        'backend/archive/legacy-cron-jobs',
       ],
     },
   ],

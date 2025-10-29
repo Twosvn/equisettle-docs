@@ -30,7 +30,7 @@ description: "Comprehensive overview of the ÉquiSettle backend platform archite
 
 ### Background Processing
 - **Queue System**: Redis-based job queuing
-- **Cron Jobs**: Extensive automated task scheduling
+- **Scheduler System**: Agenda-based persistent job scheduling (23+ automated tasks)
 - **Worker Processes**: Dedicated workers for heavy processing tasks
 
 ### Communication
@@ -49,7 +49,7 @@ description: "Comprehensive overview of the ÉquiSettle backend platform archite
 
 ### 2. Event-Driven Architecture
 - **Webhook Processing**: Real-time data synchronization
-- **Automated Workflows**: Cron-based automation
+- **Automated Workflows**: Persistent scheduler-based automation
 - **Reactive Systems**: Event-based state changes
 - **Background Processing**: Asynchronous task handling
 
@@ -104,7 +104,7 @@ description: "Comprehensive overview of the ÉquiSettle backend platform archite
 ### Caching Strategy
 - **Redis Implementation**: Upstash cloud-based Redis
 - **Session Storage**: User authentication and session management
-- **Job Queuing**: Background task management
+- **Job Scheduling**: Enterprise-grade task automation with persistence and monitoring
 - **Rate Limiting**: API protection and throttling
 - **Temporary Storage**: Cached data and computations
 
@@ -157,6 +157,7 @@ description: "Comprehensive overview of the ÉquiSettle backend platform archite
 - **[API Reference](./api/authentication)** - Complete API documentation
 - **[Integration Guides](./integrations/overview)** - Third-party service setup
 - **[Feature Documentation](./features/companies)** - Core feature details
+- **[Scheduler System](./features/scheduler)** - Automated task management
 - **[Development Guide](./development/coding-standards)** - Development best practices
 
 ## System Requirements
