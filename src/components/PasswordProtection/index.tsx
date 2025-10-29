@@ -12,7 +12,7 @@ const PasswordProtection: React.FC<PasswordProtectionProps> = ({ children }) => 
   const [loading, setLoading] = useState(true);
 
   // Password for accessing the documentation
-  const CORRECT_PASSWORD = process.env.REACT_APP_DOCS_PASSWORD || 'equisettle2024';
+  const CORRECT_PASSWORD = 'u*rqyc4rI';
 
   useEffect(() => {
     // Check if user is already authenticated (stored in sessionStorage)
