@@ -23,6 +23,7 @@ const sidebars: SidebarsConfig = {
         'backend/getting-started/setup',
         'backend/getting-started/environment',
         'backend/getting-started/quick-start',
+        'backend/getting-started/video-tutorials',
       ],
     },
     {
