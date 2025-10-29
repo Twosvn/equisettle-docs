@@ -10,47 +10,18 @@ The ÉquiSettle backend platform is built on a sophisticated, multi-layered arch
 
 ## High-Level Architecture
 
-```mermaid
-graph TB
-    Client[Frontend Applications] --> LB[Load Balancer]
-    LB --> API[API Gateway Layer]
+import DiagramEmbed from '@site/src/components/DiagramEmbed';
 
-    subgraph "Application Layer"
-        API --> Auth[Authentication Service]
-        API --> Core[Core Features]
-        API --> Integrations[Integration Layer]
+<DiagramEmbed
+  src="https://viewer.diagrams.net/?highlight=0000ff&edit=_blank&layers=1&nav=1&title=Equisettle%20-%20Architectural%20Diagram#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1yURFxl6v1O-yZJK84IwvPZpq1TWCkbGh%26export%3Ddownload"
+  title="ÉquiSettle Platform Architecture"
+  description="Complete architectural overview showing all system components, integrations, and data flows"
+  height="700px"
+/>
 
-        Core --> Companies[Company Management]
-        Core --> Cases[Case Management]
-        Core --> Invoices[Invoice Management]
-        Core --> Workflows[Workflow Engine]
-        Core --> Analytics[Analytics Engine]
+### Architecture Overview
 
-        Integrations --> QB[QuickBooks]
-        Integrations --> Zoho[Zoho CRM/Books]
-        Integrations --> Clio[Clio Legal]
-        Integrations --> Payment[Payment Gateways]
-        Integrations --> Communication[Communication APIs]
-    end
-
-    subgraph "Data Layer"
-        Core --> MongoDB[(MongoDB)]
-        Core --> Redis[(Redis Cache)]
-
-        MongoDB --> Audit[Audit Logs]
-        MongoDB --> Metrics[Metrics Data]
-        Redis --> Sessions[Session Store]
-        Redis --> Jobs[Job Queue]
-    end
-
-    subgraph "Background Services"
-        Jobs --> CronJobs[Cron Jobs]
-        Jobs --> Workers[Background Workers]
-        CronJobs --> Notifications[Notifications]
-        CronJobs --> Workflows
-        Workers --> Analytics
-    end
-```
+Our platform architecture is designed with the following key principles:
 
 ## Architectural Layers
 

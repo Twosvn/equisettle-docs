@@ -38,6 +38,7 @@ const sidebars: SidebarsConfig = {
       items: [
         'backend/integrations/overview',
         'backend/integrations/quickbooks',
+        'backend/integrations/ai-integration',
       ],
     },
     {
