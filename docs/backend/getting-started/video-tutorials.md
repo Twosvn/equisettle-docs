@@ -13,12 +13,11 @@ import VideoEmbed from '@site/src/components/VideoEmbed';
 ## Platform Overview
 
 <VideoEmbed
-  src="/videos/EQS Demo Session - 2025_07_11 13_58 BST - Recording.mp4"
+  src="https://www.youtube.com/watch?v=YOUR_EQS_DEMO_VIDEO_ID"
   title="ÉquiSettle Demo Session"
   description="Get a comprehensive overview of the ÉquiSettle platform in this live demo session, showcasing core features and how it revolutionizes debt collection and accounts receivable management."
-  type="local"
+  type="youtube"
   duration="Complete demo session"
-  showControls={true}
 />
 
 ## Development Environment Setup
@@ -57,23 +56,21 @@ import VideoEmbed from '@site/src/components/VideoEmbed';
 ### Clio Integration Demo
 
 <VideoEmbed
-  src="/videos/Clio Integration - Equisettle.mp4"
+  src="https://www.youtube.com/watch?v=YOUR_CLIO_INTEGRATION_VIDEO_ID"
   title="Clio Integration with ÉquiSettle"
   description="Complete walkthrough of setting up and using the Clio legal practice management integration with ÉquiSettle for automated case and invoice synchronization."
-  type="local"
+  type="youtube"
   duration="Full integration demo"
-  showControls={true}
 />
 
 ### WhatsApp Integration Demo
 
 <VideoEmbed
-  src="/videos/WhatsApp Integration - Equisettle.mov"
+  src="https://www.youtube.com/watch?v=YOUR_WHATSAPP_INTEGRATION_VIDEO_ID"
   title="WhatsApp Integration with ÉquiSettle"
   description="Learn how to configure and use WhatsApp messaging integration for automated client communication and debt collection workflows."
-  type="local"
+  type="youtube"
   duration="Integration walkthrough"
-  showControls={true}
 />
 
 ### General Integration Setup
