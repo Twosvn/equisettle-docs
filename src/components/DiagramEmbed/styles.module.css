@@ -1,103 +1,66 @@
 .diagramContainer {
   margin: 2rem 0;
-  border: 1px solid var(--ifm-color-emphasis-200);
+  border: 1px solid var(--ifm-color-emphasis-300);
   border-radius: 8px;
   overflow: hidden;
-  background: var(--ifm-background-color);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .diagramHeader {
+  background-color: var(--ifm-color-emphasis-100);
   padding: 1rem 1.5rem;
-  background: var(--ifm-color-emphasis-100);
-  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+  border-bottom: 1px solid var(--ifm-color-emphasis-300);
 }
 
 .diagramHeader h3 {
-  margin: 0 0 0.5rem 0;
+  margin: 0;
   color: var(--ifm-color-primary);
   font-size: 1.2rem;
-  font-weight: 600;
 }
 
 .diagramHeader p {
-  margin: 0;
-  color: var(--ifm-color-content-secondary);
+  margin: 0.5rem 0 0 0;
+  color: var(--ifm-color-emphasis-700);
   font-size: 0.9rem;
   line-height: 1.4;
 }
 
 .diagramFrame {
   position: relative;
-  overflow: hidden;
+  background-color: #ffffff;
 }
 
 .diagram {
-  border: none;
   display: block;
+  border: none;
   width: 100%;
-  transition: opacity 0.3s ease;
-}
-
-.diagram:hover {
-  opacity: 0.95;
 }
 
 .diagramFooter {
   padding: 0.75rem 1.5rem;
-  background: var(--ifm-color-emphasis-50);
+  background-color: var(--ifm-color-emphasis-50);
   border-top: 1px solid var(--ifm-color-emphasis-200);
   text-align: center;
 }
 
 .diagramFooter small {
-  color: var(--ifm-color-content-secondary);
-  font-size: 0.8rem;
+  color: var(--ifm-color-emphasis-600);
+  font-style: italic;
 }
 
-/* Responsive design */
-@media (max-width: 768px) {
-  .diagramContainer {
-    margin: 1rem -1rem;
-    border-radius: 0;
-    border-left: none;
-    border-right: none;
-  }
-
-  .diagramHeader,
-  .diagramFooter {
-    padding: 1rem;
-  }
-
-  .diagram {
-    height: 400px !important;
-  }
-}
-
-/* Dark mode support */
+/* Dark mode adjustments */
 [data-theme='dark'] .diagramContainer {
   border-color: var(--ifm-color-emphasis-300);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme='dark'] .diagramFrame {
+  background-color: var(--ifm-background-color);
 }
 
 [data-theme='dark'] .diagramHeader {
-  background: var(--ifm-color-emphasis-200);
-  border-bottom-color: var(--ifm-color-emphasis-300);
+  background-color: var(--ifm-color-emphasis-200);
 }
 
 [data-theme='dark'] .diagramFooter {
-  background: var(--ifm-color-emphasis-100);
-  border-top-color: var(--ifm-color-emphasis-300);
-}
-
-/* Loading state */
-.diagramFrame::before {
-  content: "Loading diagram...";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: var(--ifm-color-content-secondary);
-  font-size: 0.9rem;
-  z-index: -1;
+  background-color: var(--ifm-color-emphasis-100);
 }
