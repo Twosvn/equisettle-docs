@@ -44,6 +44,8 @@ const config: Config = {
           sidebarPath: './sidebars.ts',
           routeBasePath: '/docs',
           // Remove edit links for security
+          sidebarCollapsed: false,
+          sidebarCollapsible: true,
         },
         blog: false, // Disable blog for documentation site
         theme: {

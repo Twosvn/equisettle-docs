@@ -1,23 +1,240 @@
 /**
- * CSS files with the .module.css suffix will be treated as CSS modules
- * and scoped locally.
+ * ÉquiSettle Homepage Styles
  */
 
 .heroBanner {
-  padding: 4rem 0;
-  text-align: center;
+  padding: 6rem 0;
   position: relative;
   overflow: hidden;
+  background: linear-gradient(135deg, #10b981, #34d399);
+  color: white;
 }
 
-@media screen and (max-width: 996px) {
-  .heroBanner {
-    padding: 2rem;
-  }
+.heroContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.heroText {
+  text-align: left;
+}
+
+.heroDescription {
+  font-size: 1.2rem;
+  margin: 1.5rem 0 2.5rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .buttons {
   display: flex;
-  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.platformButton {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  backdrop-filter: blur(10px);
+}
+
+.platformButton:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.5);
+  color: white;
+  text-decoration: none;
+}
+
+/* Platform Preview */
+.heroVisual {
+  display: flex;
   justify-content: center;
+  align-items: center;
+}
+
+.platformPreview {
+  transform: perspective(1000px) rotateY(-5deg) rotateX(10deg);
+  transition: transform 0.3s ease;
+}
+
+.platformPreview:hover {
+  transform: perspective(1000px) rotateY(-2deg) rotateX(5deg);
+}
+
+.browserWindow {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  width: 100%;
+  max-width: 500px;
+}
+
+.browserBar {
+  background: #f1f3f4;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid #e1e5e9;
+}
+
+.browserButtons {
+  display: flex;
+  gap: 6px;
+}
+
+.browserButtons span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ff5f57;
+}
+
+.browserButtons span:nth-child(2) {
+  background: #ffbd2e;
+}
+
+.browserButtons span:nth-child(3) {
+  background: #28ca42;
+}
+
+.browserUrl {
+  background: white;
+  border: 1px solid #e1e5e9;
+  border-radius: 20px;
+  padding: 4px 12px;
+  font-size: 12px;
+  color: #5f6368;
+  flex: 1;
+  text-align: center;
+}
+
+.browserContent {
+  padding: 0;
+  background: #f8fafc;
+  min-height: 300px;
+}
+
+.dashboardPreview {
+  padding: 20px;
+}
+
+.statsRow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.statCard {
+  background: white;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.statValue {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #10b981;
+  margin-bottom: 4px;
+}
+
+.statLabel {
+  font-size: 0.75rem;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.chartArea {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.chartPlaceholder {
+  height: 120px;
+  background: linear-gradient(135deg, #10b981, #34d399);
+  border-radius: 6px;
+  opacity: 0.8;
+  position: relative;
+}
+
+.chartPlaceholder::after {
+  content: '📊 Analytics Dashboard';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 996px) {
+  .heroBanner {
+    padding: 4rem 2rem;
+  }
+
+  .heroContent {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+  }
+
+  .heroText {
+    text-align: center;
+  }
+
+  .buttons {
+    justify-content: center;
+  }
+
+  .platformPreview {
+    transform: none;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .statsRow {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .statCard {
+    padding: 12px;
+  }
+
+  .statValue {
+    font-size: 1.25rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .heroBanner {
+    padding: 3rem 1rem;
+  }
+
+  .buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .heroDescription {
+    font-size: 1rem;
+  }
+
+  .browserWindow {
+    max-width: 350px;
+  }
 }

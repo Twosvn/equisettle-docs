@@ -4,27 +4,95 @@
  * work well for content-centric websites.
  */
 
-/* You can override the default Infima variables here. */
+/* ÉquiSettle Brand Colors */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-color-primary: #10b981;
+  --ifm-color-primary-dark: #0ea574;
+  --ifm-color-primary-darker: #0d9b6d;
+  --ifm-color-primary-darkest: #0a8057;
+  --ifm-color-primary-light: #22c58b;
+  --ifm-color-primary-lighter: #2dd795;
+  --ifm-color-primary-lightest: #4ade80;
   --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --docusaurus-highlighted-code-line-bg: rgba(16, 185, 129, 0.1);
+
+  /* Enhanced sidebar visibility */
+  --ifm-sidebar-width: 320px;
+  --ifm-toc-border-color: var(--ifm-color-emphasis-300);
+
+  /* ÉquiSettle custom properties */
+  --eqs-green-primary: #10b981;
+  --eqs-green-secondary: #34d399;
+  --eqs-green-light: #d1fae5;
+  --eqs-green-dark: #065f46;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --ifm-color-primary: #34d399;
+  --ifm-color-primary-dark: #22c58b;
+  --ifm-color-primary-darker: #16a085;
+  --ifm-color-primary-darkest: #059669;
+  --ifm-color-primary-light: #4ade80;
+  --ifm-color-primary-lighter: #6ee7b7;
+  --ifm-color-primary-lightest: #a7f3d0;
+  --docusaurus-highlighted-code-line-bg: rgba(52, 211, 153, 0.2);
+}
+
+/* Enhanced Navigation & Layout */
+.theme-doc-sidebar-container {
+  border-right: 1px solid var(--ifm-toc-border-color);
+}
+
+.menu__link--active {
+  background: var(--eqs-green-light);
+  color: var(--eqs-green-dark);
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+[data-theme='dark'] .menu__link--active {
+  background: rgba(52, 211, 153, 0.15);
+  color: var(--ifm-color-primary-lighter);
+}
+
+/* Improve sidebar visibility */
+.theme-doc-sidebar-menu {
+  padding: 1rem;
+}
+
+.menu__list-item {
+  margin: 0.125rem 0;
+}
+
+.menu__link {
+  border-radius: 6px;
+  padding: 0.5rem 0.75rem;
+  transition: all 0.2s ease;
+}
+
+.menu__link:hover {
+  background: var(--ifm-hover-overlay);
+  text-decoration: none;
+}
+
+/* Table of Contents positioning */
+.table-of-contents {
+  position: sticky;
+  top: calc(var(--ifm-navbar-height) + 2rem);
+}
+
+/* ÉquiSettle branding enhancements */
+.navbar__brand {
+  font-weight: 700;
+  color: var(--eqs-green-primary);
+}
+
+.footer {
+  background: var(--eqs-green-dark);
+}
+
+/* Password protection component styling */
+.passwordContainer {
+  background: linear-gradient(135deg, var(--eqs-green-primary), var(--eqs-green-secondary));
 }

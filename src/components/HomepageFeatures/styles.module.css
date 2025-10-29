@@ -1,11 +1,235 @@
+/* ÉquiSettle Features Section */
 .features {
-  display: flex;
-  align-items: center;
-  padding: 2rem 0;
-  width: 100%;
+  padding: 6rem 0;
+  background: #f8fafc;
 }
 
-.featureSvg {
-  height: 200px;
-  width: 200px;
+.featuresHeader {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.featuresTitle {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #1a202c;
+  margin-bottom: 1rem;
+}
+
+.featuresSubtitle {
+  font-size: 1.25rem;
+  color: #64748b;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Feature Cards */
+.feature {
+  margin-bottom: 2rem;
+}
+
+.featureCard {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  height: 100%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.featureCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(135deg, #10b981, #34d399);
+}
+
+.featureCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(16, 185, 129, 0.15);
+}
+
+.featureIcon {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.iconEmoji {
+  font-size: 3rem;
+  display: inline-block;
+  padding: 1rem;
+  background: linear-gradient(135deg, #10b981, #34d399);
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.3);
+}
+
+.featureContent {
+  text-align: center;
+}
+
+.featureTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1a202c;
+  margin-bottom: 1rem;
+}
+
+.featureDescription {
+  color: #64748b;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.featureStats {
+  margin-top: auto;
+}
+
+.statsLabel {
+  background: linear-gradient(135deg, #10b981, #34d399);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  display: inline-block;
+}
+
+/* CTA Section */
+.ctaSection {
+  text-align: center;
+  margin-top: 6rem;
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #10b981, #34d399);
+  border-radius: 24px;
+  color: white;
+}
+
+.ctaSection h3 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.ctaSection p {
+  font-size: 1.25rem;
+  margin-bottom: 2.5rem;
+  opacity: 0.9;
+}
+
+.ctaButtons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.ctaButtons .button {
+  min-width: 200px;
+}
+
+.ctaButtons .button--primary {
+  background: white;
+  color: #10b981;
+  border: 2px solid white;
+}
+
+.ctaButtons .button--primary:hover {
+  background: rgba(255, 255, 255, 0.9);
+  color: #0ea574;
+  text-decoration: none;
+}
+
+.ctaButtons .button--outline {
+  border-color: rgba(255, 255, 255, 0.5);
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.ctaButtons .button--outline:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: white;
+  color: white;
+  text-decoration: none;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 996px) {
+  .features {
+    padding: 4rem 0;
+  }
+
+  .featuresTitle {
+    font-size: 2.5rem;
+  }
+
+  .featuresSubtitle {
+    font-size: 1.125rem;
+  }
+
+  .featureCard {
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .iconEmoji {
+    font-size: 2.5rem;
+    padding: 0.75rem;
+  }
+
+  .featureTitle {
+    font-size: 1.25rem;
+  }
+
+  .ctaSection {
+    margin-top: 4rem;
+    padding: 3rem 1.5rem;
+  }
+
+  .ctaSection h3 {
+    font-size: 2rem;
+  }
+
+  .ctaButtons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .ctaButtons .button {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+/* Dark mode support */
+[data-theme='dark'] .features {
+  background: #1a202c;
+}
+
+[data-theme='dark'] .featuresTitle {
+  color: white;
+}
+
+[data-theme='dark'] .featuresSubtitle {
+  color: #a0aec0;
+}
+
+[data-theme='dark'] .featureCard {
+  background: #2d3748;
+  border-color: #4a5568;
+}
+
+[data-theme='dark'] .featureTitle {
+  color: white;
+}
+
+[data-theme='dark'] .featureDescription {
+  color: #a0aec0;
 }
