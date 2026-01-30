@@ -58,47 +58,83 @@ The scheduler uses your existing MongoDB connection and creates a `scheduledJobs
 
 ## Active Jobs
 
-The scheduler manages **23 automated jobs** across various business functions:
+The scheduler manages **27 automated jobs** across various business functions:
 
-### Payment & Invoice Processing
-- **GoCardless Payment Sync**: Synchronizes payment status every 30 minutes
-- **Smart Invoice Reminders**: Sends intelligent reminders on weekdays at 11 AM
-- **Auto Payment Links**: Generates payment links daily at 2 AM
-- **Auto Invoice Conversion**: Converts overdue invoices to cases at 3 AM
-- **Case Status Migration**: Updates case statuses daily at 4 AM
+### Payment & Invoice Processing (5 Jobs)
 
-### Customer Follow-ups
-- **Overdue Notifications**: Sends overdue alerts daily at 9 AM
-- **Upcoming Notifications**: Sends upcoming due date alerts at 9 AM
-- **Status Updates**: Updates follow-up statuses every 15 minutes
+| Job Name | Schedule | Frequency | Description |
+|----------|----------|-----------|-------------|
+| `sync-gocardless-payments` | `*/30 * * * *` | Every 30 minutes | Synchronizes GoCardless payment status and updates invoice records |
+| `smart-invoice-reminders` | `0 11 * * 1-5` | 11:00 AM weekdays | Sends intelligent invoice reminders based on payment history |
+| `auto-payment-links` | `0 2 * * *` | Daily at 2:00 AM | Generates and emails payment links for unpaid invoices |
+| `auto-convert-invoices` | `0 3 * * *` | Daily at 3:00 AM | Converts overdue invoices to cases automatically |
+| `migrate-case-status` | `0 4 * * *` | Daily at 4:00 AM | Updates case statuses based on conversion workflows |
 
-### Third-party Integrations
-- **QuickBooks Token Refresh**: Maintains OAuth tokens daily at 1 AM
-- **Zoho Synchronization**: Syncs data every 30 minutes during business hours
-- **Clio Synchronization**: Syncs legal data every 30 minutes during business hours
-- **Sage Synchronization**: Syncs accounting data every 30 minutes during business hours
+### Customer Follow-ups (3 Jobs)
 
-### Analytics & Reporting
-- **Weekly Metrics Update**: Calculates company metrics every Monday at midnight
-- **Company Analytics**: Updates analytics daily at 6 AM
-- **Predictive Analytics**: Runs ML models daily at 5 AM
+| Job Name | Schedule | Frequency | Description |
+|----------|----------|-----------|-------------|
+| `followup-overdue-notifications` | `0 9 * * *` | Daily at 9:00 AM | Sends notifications for overdue follow-up tasks |
+| `followup-upcoming-notifications` | `0 9 * * *` | Daily at 9:00 AM | Sends notifications for upcoming follow-up due dates (3 days) |
+| `followup-status-updates` | `*/15 * * * *` | Every 15 minutes | Updates follow-up statuses based on due dates |
 
-### System Operations
-- **Credit Monitoring**: Polls credit services every 20 minutes
-- **Workflow Automation**: Progresses workflows every 10 minutes
-- **Outstanding Calculations**: Recalculates balances every 6 hours
-- **Broadcast Management**: Manages communications every 5 minutes
-- **Company Deletion**: Processes deletions daily at 7 AM
-- **Reminder Emails**: Sends internal reminders daily at 8 AM
-- **Payment Plan Validation**: Checks workflows daily at 10 AM
-- **System Cleanup**: Maintains scheduler health weekly on Sundays
+### Third-party Integrations (5 Jobs)
+
+| Job Name | Schedule | Frequency | Description |
+|----------|----------|-----------|-------------|
+| `quickbooks-token-refresh` | `0 1 * * *` | Daily at 1:00 AM | Refreshes OAuth tokens for QuickBooks integration |
+| `zoho-sync` | `0,30 9-17 * * 1-5` | Every 30 min, 9 AM-5 PM, weekdays | Syncs invoices and contacts with Zoho Books |
+| `clio-sync` | `0,30 9-17 * * 1-5` | Every 30 min, 9 AM-5 PM, weekdays | Syncs matters and bills with Clio legal software |
+| `sage-sync` | `0,30 9-17 * * 1-5` | Every 30 min, 9 AM-5 PM, weekdays | Syncs accounting data with Sage |
+| `gmail-invoice-polling` | `*/5 * * * *` | Every 5 minutes | Polls Gmail for invoice emails and processes attachments |
+
+### Analytics & Reporting (3 Jobs)
+
+| Job Name | Schedule | Frequency | Description |
+|----------|----------|-----------|-------------|
+| `weekly-metrics-update` | `0 0 * * 1` | Mondays at midnight | Calculates weekly metrics for all companies |
+| `company-analytics-update` | `0 6 * * *` | Daily at 6:00 AM | Updates company-level analytics dashboards |
+| `predictive-analytics-update` | `0 5 * * *` | Daily at 5:00 AM | Runs ML models for payment predictions |
+
+### Workflow Automation (3 Jobs)
+
+| Job Name | Schedule | Frequency | Description |
+|----------|----------|-----------|-------------|
+| `credit-monitoring-poll` | `*/20 * * * *` | Every 20 minutes | Polls credit monitoring services for updates |
+| `workflow-auto-progress` | `*/10 * * * *` | Every 10 minutes | Automatically progresses cases through workflows |
+| `case-outstanding-calculation` | `0 */6 * * *` | Every 6 hours | Recalculates outstanding balances for all cases |
+
+### Admin & Company Management (5 Jobs)
+
+| Job Name | Schedule | Frequency | Description |
+|----------|----------|-----------|-------------|
+| `broadcast-scheduling` | `*/5 * * * *` | Every 5 minutes | Processes scheduled broadcasts and communications |
+| `send-scheduled-broadcast` | On-demand | As scheduled | Sends individual scheduled broadcasts |
+| `company-deletion-process` | `0 7 * * *` | Daily at 7:00 AM | Processes company deletion requests |
+| `trial-reminder-emails` | `0 9 * * *` | Daily at 9:00 AM | Sends trial expiration reminder emails |
+| `monitor-company` | On-demand | As needed | Monitors specific company metrics and usage |
+
+### Internal Management (2 Jobs)
+
+| Job Name | Schedule | Frequency | Description |
+|----------|----------|-----------|-------------|
+| `reminder-emails` | `0 8 * * *` | Daily at 8:00 AM | Sends internal reminder emails for workflows |
+| `payment-plan-workflow-check` | `0 10 * * *` | Daily at 10:00 AM | Validates payment plan workflows |
+
+### Maintenance (1 Job)
+
+| Job Name | Schedule | Frequency | Description |
+|----------|----------|-----------|-------------|
+| `scheduler-cleanup` | `0 0 * * 0` | Sundays at midnight | Cleans up old completed jobs (30+ days) |
 
 ## API Reference
 
 ### Base URL
 ```
-/api/v1/scheduler
+/api/scheduler
 ```
+
+All scheduler endpoints require authentication.
 
 ### Endpoints
 
@@ -115,10 +151,18 @@ Returns overall scheduler status and job counts.
   "data": {
     "initialized": true,
     "started": true,
-    "totalJobs": 156,
-    "runningJobs": 2,
+    "healthy": true,
+    "totalJobs": 32,
+    "runningJobs": 0,
     "failedJobs": 0,
-    "scheduledJobs": 23
+    "completedJobs": 245,
+    "scheduledJobs": 27,
+    "definedJobTypes": [
+      "sync-gocardless-payments",
+      "smart-invoice-reminders"
+      // ... all job names
+    ],
+    "timestamp": "2025-11-04T18:02:53.871Z"
   }
 }
 ```
