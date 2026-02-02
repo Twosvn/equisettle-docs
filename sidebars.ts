@@ -31,6 +31,8 @@ const sidebars: SidebarsConfig = {
       label: '🏗️ Architecture',
       items: [
         'backend/architecture/overview',
+        'backend/architecture/unified-orchestrator',
+        'backend/architecture/agentic-platform',
       ],
     },
     {
@@ -48,6 +50,34 @@ const sidebars: SidebarsConfig = {
       items: [
         'backend/features/csv-mapping',
         'backend/features/scheduler',
+      ],
+    },
+    {
+      type: 'category',
+      label: '🏦 Bank Reconciliation',
+      items: [
+        'backend/reconciliation/README',
+        'backend/reconciliation/QUICK_START',
+      ],
+    },
+    {
+      type: 'category',
+      label: '🤖 Agentic AI',
+      items: [
+        'backend/AGENTIC_SETUP',
+        'backend/AGENTIC_QUICKSTART',
+        'backend/TEST_AGENTIC',
+        'backend/COST_OPTIMIZATION',
+        'backend/USING_CLAUDE',
+        'backend/WHAT_IT_DOES',
+        'backend/FRONTEND_INTEGRATION',
+      ],
+    },
+    {
+      type: 'category',
+      label: '📜 Skills',
+      items: [
+        'backend/skills/payment-terms-skill',
       ],
     },
     {
