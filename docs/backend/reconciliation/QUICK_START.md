@@ -1,3 +1,9 @@
+---
+sidebar_position: 2
+title: Quick Start
+description: 5-minute integration guide for bank reconciliation
+---
+
 # Reconciliation Module - Quick Start Guide
 
 ## 🚀 5-Minute Integration
@@ -116,7 +122,7 @@ Default values (can override per request):
 
 - **High (>70)**: Auto-match, bulk confirmable
 - **Medium (40-70)**: Needs review
-- **Low (<40)**: Unmatched, requires manual
+- **Low (&lt;40)**: Unmatched, requires manual
 
 ---
 
@@ -138,7 +144,7 @@ Default values (can override per request):
 - Try lowering thresholds: `amountTolerance: 10, nameThreshold: 0.7`
 
 ### Upload failed?
-- Check file size <20MB
+- Check file size &lt;20MB
 - Verify MIME type is CSV or PDF
 - Check auth middleware sets `req.user._id`
 

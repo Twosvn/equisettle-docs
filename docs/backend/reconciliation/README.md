@@ -1,3 +1,9 @@
+---
+sidebar_position: 1
+title: Bank Reconciliation
+description: Comprehensive reconciliation system for matching bank transactions to invoices
+---
+
 # Bank Statement Reconciliation Module
 
 Comprehensive reconciliation system for matching bank transactions to invoices with automatic and manual matching capabilities.
@@ -46,7 +52,7 @@ Comprehensive reconciliation system for matching bank transactions to invoices w
 #### Confidence Scoring
 - High: >70 points (auto-matched, bulk confirmable)
 - Medium: 40-70 points (needs review)
-- Low: <40 points (unmatched)
+- Low: &lt;40 points (unmatched)
 
 ### ✅ Phase 3: Reconciliation Dashboard
 
@@ -61,7 +67,7 @@ Comprehensive reconciliation system for matching bank transactions to invoices w
 - Accept/reject/manually select invoice
 
 #### Unmatched Payments
-- Low confidence or no matches (<40%)
+- Low confidence or no matches (&lt;40%)
 - Manual search and link to invoices
 - Mark as non-invoice payment option
 

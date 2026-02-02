@@ -1,3 +1,9 @@
+---
+sidebar_position: 10
+title: Cost Optimization
+description: Strategies to reduce agentic AI costs by up to 90%
+---
+
 # Cost Optimization Strategies for Agentic AI
 
 ## Current Costs
@@ -112,7 +118,7 @@ docker run ollama/llama3
 **Ramp (Expense Management):**
 - Uses GPT-4 only for anomaly detection
 - Simple categorization uses rules
-- Cost: <$0.001 per transaction
+- Cost: &lt;$0.001 per transaction
 
 **Brex (Corporate Cards):**
 - Caches AI decisions for 7 days
@@ -122,7 +128,7 @@ docker run ollama/llama3
 **Mercury (Banking):**
 - AI only for fraud detection (high value)
 - Everything else uses traditional ML
-- Cost: <$0.01 per transaction
+- Cost: &lt;$0.01 per transaction
 
 ## 🎯 Your Optimal Setup
 
@@ -145,7 +151,7 @@ const AGENTIC_CONFIG = {
   
   // Model selection
   models: {
-    simple: 'claude-3-haiku',    // <$5k invoices, low risk
+    simple: 'claude-3-haiku',    // under $5k invoices, low risk
     complex: 'claude-3-5-sonnet' // >$5k invoices, high risk
   }
 };
