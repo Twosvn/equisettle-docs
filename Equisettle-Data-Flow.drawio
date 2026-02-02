@@ -1,0 +1,808 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" version="29.1.0" pages="3">
+  <diagram name="Case and Invoice Process Flow" id="case-invoice-flow">
+    <mxGraphModel dx="2171" dy="1636" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="1400" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=26;fontStyle=1;fontColor=#003366;" value="EQS Platform - Complete System Architecture" vertex="1">
+          <mxGeometry height="50" width="800" x="500" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="customer-agreement-section" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=16;fontStyle=1" value="CUSTOMER AGREEMENTS" vertex="1">
+          <mxGeometry height="40" width="260" x="40" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="customer-agreement" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;align=left;verticalAlign=top;" value="&lt;b&gt;Customer Agreement&lt;/b&gt;&#xa;&#xa;• Customer ID&#xa;• First Name / Last Name&#xa;• Business Name&#xa;• Email / Phone&#xa;• Address&#xa;• Status (active/inactive)&#xa;• Invoices[]&#xa;• autoConvertToCase flag&#xa;• Company" vertex="1">
+          <mxGeometry height="200" width="220" x="60" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="create-agreement" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="Create&#xa;Customer Agreement" vertex="1">
+          <mxGeometry height="60" width="120" x="110" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow-create-agreement" edge="1" parent="1" source="create-agreement" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="customer-agreement">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="case-section-title" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=16;fontStyle=1" value="CASE MANAGEMENT" vertex="1">
+          <mxGeometry height="40" width="260" x="340" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="csv-import" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="CSV Import&#xa;(Bulk Upload)" vertex="1">
+          <mxGeometry height="60" width="120" x="340" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="manual-case" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="Manual Case&#xa;Creation" vertex="1">
+          <mxGeometry height="60" width="120" x="480" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="case-entity" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=left;verticalAlign=top;" value="&lt;b&gt;CASE (CSVMapping)&lt;/b&gt;&#xa;&#xa;• Client Reference&#xa;• Case Type (person/company)&#xa;• Case Amount&#xa;• Outstanding Balance&#xa;• Payment Status&#xa;• Lifecycle Status&#xa;• Invoices[]&#xa;• Payment Plans[]&#xa;• Company" vertex="1">
+          <mxGeometry height="190" width="230" x="355" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow-csv-case" edge="1" parent="1" source="csv-import" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" target="case-entity">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow-manual-case" edge="1" parent="1" source="manual-case" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" target="case-entity">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="invoice-section-title" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=16;fontStyle=1" value="INVOICE MANAGEMENT" vertex="1">
+          <mxGeometry height="40" width="300" x="640" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="case-related-invoice" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="Case-Related&#xa;Invoice" vertex="1">
+          <mxGeometry height="60" width="120" x="660" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="standalone-invoice" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="Standalone&#xa;Invoice" vertex="1">
+          <mxGeometry height="60" width="120" x="800" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="invoice-entity" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=left;verticalAlign=top;" value="&lt;b&gt;INVOICE&lt;/b&gt;&#xa;&#xa;• Invoice Number&#xa;• Amount&#xa;• Outstanding Balance (default = amount)&#xa;• Due Date&#xa;• Status (paid/unpaid/partial)&#xa;• Category (payment/expense/AR)&#xa;• Payment Link&#xa;• Case (if case-related)&#xa;• Customer Agreement (if standalone)&#xa;• Workflow (if linked)&#xa;• Payment Plan (if linked)&#xa;• isConvertedToCase (timestamp)" vertex="1">
+          <mxGeometry height="240" width="300" x="640" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow-case-invoice" edge="1" parent="1" source="case-related-invoice" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" target="invoice-entity">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow-standalone-invoice" edge="1" parent="1" source="standalone-invoice" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" target="invoice-entity">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="link-case-invoice" edge="1" parent="1" source="case-entity" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.3;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;dashed=1;strokeColor=#009900;strokeWidth=2;" target="invoice-entity">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="link-label" connectable="0" parent="link-case-invoice" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontStyle=1;fontSize=11;" value="invoices[]" vertex="1">
+          <mxGeometry relative="1" x="-0.1" y="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="link-agreement-invoice" edge="1" parent="1" source="customer-agreement" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;dashed=1;strokeColor=#CC0000;strokeWidth=2;" target="invoice-entity">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="320" y="190" />
+              <mxPoint x="320" y="410" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="agreement-invoice-label" connectable="0" parent="link-agreement-invoice" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontStyle=1;fontSize=11;" value="invoices[]&#xa;(standalone)" vertex="1">
+          <mxGeometry relative="1" x="-0.1" y="1" as="geometry">
+            <mxPoint x="15" y="10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="convert-section-title" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=16;fontStyle=1" value="STANDALONE → CASE CONVERSION" vertex="1">
+          <mxGeometry height="40" width="300" x="60" y="460" as="geometry" />
+        </mxCell>
+        <mxCell id="auto-convert" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" value="Auto Convert&#xa;(Cron Job)&#xa;&#xa;Runs every hour&#xa;Checks unpaid invoices&#xa;30 days overdue" vertex="1">
+          <mxGeometry height="100" width="120" x="80" y="520" as="geometry" />
+        </mxCell>
+        <mxCell id="manual-convert" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" value="Manual&#xa;Convert to Case" vertex="1">
+          <mxGeometry height="100" width="120" x="220" y="520" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow-agreement-auto" edge="1" parent="1" source="customer-agreement" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="auto-convert">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="115" y="480" />
+              <mxPoint x="140" y="480" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arrow-agreement-manual" edge="1" parent="1" source="customer-agreement" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="manual-convert">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="225" y="480" />
+              <mxPoint x="280" y="480" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="converted-case" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="Creates New Case&#xa;&#xa;• Copies customer data&#xa;• Links invoice to case&#xa;• Sets isConvertedToCase" vertex="1">
+          <mxGeometry height="80" width="180" x="120" y="650" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow-auto-converted" edge="1" parent="1" source="auto-convert" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" target="converted-case">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow-manual-converted" edge="1" parent="1" source="manual-convert" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" target="converted-case">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow-converted-to-case" edge="1" parent="1" source="converted-case" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;strokeColor=#009900;strokeWidth=2;" target="case-entity">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="320" y="690" />
+              <mxPoint x="320" y="450" />
+              <mxPoint x="413" y="450" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="payment-plan-title" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=16;fontStyle=1" value="PAYMENT PLANS" vertex="1">
+          <mxGeometry height="40" width="200" x="370" y="460" as="geometry" />
+        </mxCell>
+        <mxCell id="create-plan" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="Create&#xa;Payment Plan" vertex="1">
+          <mxGeometry height="60" width="120" x="410" y="520" as="geometry" />
+        </mxCell>
+        <mxCell id="payment-plan-entity" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=left;verticalAlign=top;" value="&lt;b&gt;Payment Plan&lt;/b&gt;&#xa;&#xa;• Case&#xa;• Company&#xa;• Start Date / Total Amount&#xa;• Frequency (monthly/bi-weekly/weekly)&#xa;• Number of Payments&#xa;• Status (active/completed/defaulted)&#xa;• Schedule[]&#xa;  - Schedule ID, Due Date&#xa;  - Expected Amount&#xa;  - Status (pending/paid/overdue)&#xa;  - Linked Invoice&#xa;  - Remittance Records[]&#xa;  - Paid Amount / Paid Date" vertex="1">
+          <mxGeometry height="270" width="220" x="360" y="610" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow-create-plan" edge="1" parent="1" source="create-plan" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="payment-plan-entity">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="link-case-plan" edge="1" parent="1" source="case-entity" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;strokeColor=#009900;strokeWidth=2;" target="create-plan">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="link-plan-label" connectable="0" parent="link-case-plan" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontStyle=1;fontSize=11;" value="paymentPlans[]" vertex="1">
+          <mxGeometry relative="1" x="-0.1" y="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="payment-section-title" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=16;fontStyle=1" value="PAYMENT PROCESSING" vertex="1">
+          <mxGeometry height="40" width="300" x="640" y="510" as="geometry" />
+        </mxCell>
+        <mxCell id="gocardless" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="GoCardless&#xa;Payment Link" vertex="1">
+          <mxGeometry height="60" width="120" x="660" y="570" as="geometry" />
+        </mxCell>
+        <mxCell id="manual-payment" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="Manual&#xa;Payment Entry" vertex="1">
+          <mxGeometry height="60" width="120" x="800" y="570" as="geometry" />
+        </mxCell>
+        <mxCell id="payment-webhook" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" value="GoCardless&#xa;Webhook" vertex="1">
+          <mxGeometry height="60" width="120" x="660" y="660" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow-gc-webhook" edge="1" parent="1" source="gocardless" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="payment-webhook">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="update-invoice-status" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" value="Update Invoice&#xa;• Status → paid&#xa;• Outstanding Balance → 0&#xa;• Payment Date" vertex="1">
+          <mxGeometry height="80" width="140" x="660" y="750" as="geometry" />
+        </mxCell>
+        <mxCell id="update-plan-status" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" value="Update Payment Plan&#xa;• Installment Status&#xa;• Link Remittance&#xa;• Check Completion" vertex="1">
+          <mxGeometry height="80" width="140" x="820" y="750" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow-webhook-invoice" edge="1" parent="1" source="payment-webhook" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="update-invoice-status">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow-manual-invoice" edge="1" parent="1" source="manual-payment" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" target="update-invoice-status">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow-payment-plan" edge="1" parent="1" source="update-invoice-status" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;" target="update-plan-status">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="plan-label" connectable="0" parent="arrow-payment-plan" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;" value="If linked to plan" vertex="1">
+          <mxGeometry relative="1" x="-0.1" y="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="recalc-case" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontStyle=1" value="Recalculate Case&#xa;Outstanding Balance&#xa;&#xa;outstandingBalance =&#xa;caseAmount - totalPaid&#xa;&#xa;(Only PAID invoices)" vertex="1">
+          <mxGeometry height="100" width="180" x="660" y="860" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow-invoice-recalc" edge="1" parent="1" source="update-invoice-status" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#FF6600;" target="recalc-case">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="overall-analytics-title" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#003366;strokeColor=#001f3f;fontSize=16;fontStyle=1;fontColor=#FFFFFF;" value="OVERALL ANALYTICS DASHBOARD" vertex="1">
+          <mxGeometry height="40" width="740" x="1020" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="analytics-aggregation" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;align=left;verticalAlign=top;fontSize=13;fontStyle=1" value="&lt;b&gt;ANALYTICS AGGREGATION ENGINE&lt;/b&gt;&#xa;&#xa;Pulls data from:" vertex="1">
+          <mxGeometry height="230" width="700" x="1040" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="source-cases" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" value="CASES&#xa;• Total Cases&#xa;• Total Amount&#xa;• Outstanding Balance&#xa;• Payment Status" vertex="1">
+          <mxGeometry height="90" width="130" x="1060" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="source-invoices" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" value="INVOICES&#xa;• Paid Invoices (collected)&#xa;• Unpaid Invoices&#xa;• Outstanding Balances&#xa;• Payment Trends&#xa;• PTP Invoices" vertex="1">
+          <mxGeometry height="90" width="130" x="1210" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="source-plans" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" value="PAYMENT PLANS&#xa;• Active Plans&#xa;• Pending Installments&#xa;• Expected Amounts&#xa;• Due Dates" vertex="1">
+          <mxGeometry height="90" width="130" x="1360" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="source-predictive" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" value="PREDICTIVE&#xa;ANALYTICS&#xa;• AI Forecasts&#xa;• Payment Probability&#xa;• DSO Predictions&#xa;• Cashflow Forecast" vertex="1">
+          <mxGeometry height="90" width="130" x="1510" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="source-cache" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;" value="REDIS CACHE&#xa;• 5 min TTL&#xa;• Auto-invalidate on:&#xa;  - Invoice mutations&#xa;  - Payment received&#xa;  - Case updates" vertex="1">
+          <mxGeometry height="70" width="580" x="1060" y="285" as="geometry" />
+        </mxCell>
+        <mxCell id="calculated-metrics" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=13;fontStyle=1" value="&lt;b&gt;CALCULATED METRICS&lt;/b&gt;" vertex="1">
+          <mxGeometry height="30" width="700" x="1040" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="metric1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;" value="&lt;b&gt;Total Portfolio Value&lt;/b&gt;&#xa;Sum of all case amounts&#xa;(excludes closed cases)" vertex="1">
+          <mxGeometry height="80" width="130" x="1060" y="450" as="geometry" />
+        </mxCell>
+        <mxCell id="metric2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;fontStyle=1" value="&lt;b&gt;Outstanding Balance&lt;/b&gt;&#xa;Sum of case&#xa;outstandingBalance&#xa;(only paid invoices count)" vertex="1">
+          <mxGeometry height="80" width="130" x="1210" y="450" as="geometry" />
+        </mxCell>
+        <mxCell id="metric3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;" value="&lt;b&gt;Amount Recovered&lt;/b&gt;&#xa;Sum of all paid invoice&#xa;amounts" vertex="1">
+          <mxGeometry height="80" width="130" x="1360" y="450" as="geometry" />
+        </mxCell>
+        <mxCell id="metric4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;" value="&lt;b&gt;Collection Rate&lt;/b&gt;&#xa;(Paid invoices /&#xa;Total invoices) * 100" vertex="1">
+          <mxGeometry height="80" width="130" x="1510" y="450" as="geometry" />
+        </mxCell>
+        <mxCell id="expected-cashflow-metric" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFE6CC;strokeColor=#FF6600;fontSize=11;fontStyle=1;strokeWidth=3;" value="&lt;b&gt;Expected Cashflow&lt;/b&gt;&#xa;&#xa;= Predictive Analytics&#xa;+ Non-Predicted Invoices&#xa;+ Payment Plan Installments&#xa;&#xa;• Filters by forecast window&#xa;• No double-counting&#xa;• Duration: 7d, 30d, 90d" vertex="1">
+          <mxGeometry height="120" width="580" x="1060" y="560" as="geometry" />
+        </mxCell>
+        <mxCell id="additional-analytics" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=13;fontStyle=1" value="&lt;b&gt;ADDITIONAL ANALYTICS&lt;/b&gt;" vertex="1">
+          <mxGeometry height="30" width="700" x="1040" y="710" as="geometry" />
+        </mxCell>
+        <mxCell id="analytics-list" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=left;fontSize=11;" value="• Payment Status Distribution (by time period)&#xa;• Top Cases by Amount&#xa;• Payment Trends (7d, 30d, 90d, allTime)&#xa;• Aging Buckets (overdue invoice tracking)&#xa;• PTP (Promise to Pay) Invoices&#xa;• Year-over-Year Comparisons&#xa;• Follow-ups Tracking" vertex="1">
+          <mxGeometry height="120" width="580" x="1060" y="760" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow-case-to-analytics" edge="1" parent="1" source="case-entity" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;strokeColor=#0066CC;strokeWidth=2;dashed=1;" target="source-cases">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1000" y="325" />
+              <mxPoint x="1000" y="203" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arrow-invoice-to-analytics" edge="1" parent="1" source="invoice-entity" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#0066CC;strokeWidth=2;dashed=1;" target="source-invoices">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1000" y="290" />
+              <mxPoint x="1000" y="225" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arrow-plan-to-analytics" edge="1" parent="1" source="payment-plan-entity" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#0066CC;strokeWidth=2;dashed=1;" target="source-plans">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1000" y="678" />
+              <mxPoint x="1000" y="225" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="predictive-title" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=16;fontStyle=1" value="PREDICTIVE ANALYTICS (AI)" vertex="1">
+          <mxGeometry height="40" width="380" x="1020" y="920" as="geometry" />
+        </mxCell>
+        <mxCell id="trigger-predictive" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="Trigger Predictive&#xa;Analytics&#xa;&#xa;Requirements:&#xa;• 3+ paid invoices&#xa;• Case-related invoices" vertex="1">
+          <mxGeometry height="100" width="140" x="1060" y="980" as="geometry" />
+        </mxCell>
+        <mxCell id="predictive-entity" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=left;verticalAlign=top;" value="&lt;b&gt;Predictive Analytics&lt;/b&gt;&#xa;&#xa;• Case / Company&#xa;• Payment Predictions[]&#xa;  - Invoice&#xa;  - Payment Probability&#xa;  - Risk Level&#xa;• Cash Flow Forecast[]&#xa;  - Week Start/End&#xa;  - Expected Amount&#xa;  - Contributing Invoices[]" vertex="1">
+          <mxGeometry height="180" width="240" x="1040" y="1100" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow-trigger-predictive" edge="1" parent="1" source="trigger-predictive" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="predictive-entity">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tensorflow" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" value="TensorFlow.js Models&#xa;&#xa;• Payment Likelihood&#xa;• DSO Prediction (LSTM)&#xa;• Cashflow Forecast (NN)" vertex="1">
+          <mxGeometry height="100" width="160" x="1220" y="980" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow-predictive-tf" edge="1" parent="1" source="trigger-predictive" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;" target="tensorflow">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tf-label" connectable="0" parent="arrow-predictive-tf" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Uses" vertex="1">
+          <mxGeometry relative="1" x="-0.1" y="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arrow-predictive-to-source" edge="1" parent="1" source="predictive-entity" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeColor=#0066CC;strokeWidth=2;dashed=1;" target="source-predictive">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1575" y="1190" />
+              <mxPoint x="1575" y="270" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="workflow-title" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=16;fontStyle=1" value="WORKFLOWS &amp; AUTOMATION" vertex="1">
+          <mxGeometry height="40" width="320" x="1440" y="920" as="geometry" />
+        </mxCell>
+        <mxCell id="workflow-trigger" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="Workflow Trigger&#xa;&#xa;• Invoice creation&#xa;• Status change&#xa;• Payment received&#xa;• Overdue" vertex="1">
+          <mxGeometry height="100" width="120" x="1460" y="980" as="geometry" />
+        </mxCell>
+        <mxCell id="workflow-stages" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;align=left;" value="&lt;b&gt;Workflow Stages&lt;/b&gt;&#xa;&#xa;• Initial Contact&#xa;• Follow-up&#xa;• Escalation&#xa;• External Handoff&#xa;• Legal Action&#xa;• Resolution" vertex="1">
+          <mxGeometry height="140" width="140" x="1600" y="980" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow-workflow" edge="1" parent="1" source="workflow-trigger" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="workflow-stages">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-title" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=14;fontStyle=1" value="LEGEND" vertex="1">
+          <mxGeometry height="30" width="280" x="40" y="1000" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-entity" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" value="Entity / Data Model" vertex="1">
+          <mxGeometry height="35" width="120" x="60" y="1040" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-action" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;" value="Action / Process" vertex="1">
+          <mxGeometry height="35" width="120" x="190" y="1040" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-system" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;" value="System / Cron" vertex="1">
+          <mxGeometry height="35" width="120" x="60" y="1085" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-calculation" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=10;" value="Calculation" vertex="1">
+          <mxGeometry height="35" width="120" x="190" y="1085" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-external" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;" value="External Service" vertex="1">
+          <mxGeometry height="35" width="120" x="60" y="1130" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-customer" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;" value="Customer Data" vertex="1">
+          <mxGeometry height="35" width="120" x="190" y="1130" as="geometry" />
+        </mxCell>
+        <mxCell id="notes-title" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=14;fontStyle=1" value="KEY NOTES" vertex="1">
+          <mxGeometry height="30" width="280" x="40" y="1190" as="geometry" />
+        </mxCell>
+        <mxCell id="notes-content" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;align=left;verticalAlign=top;fontSize=10;" value="1. Customer Agreement holds standalone&#xa;   invoices (not linked to cases)&#xa;&#xa;2. Case outstanding = caseAmount - totalPaid&#xa;   (only PAID invoices count)&#xa;&#xa;3. Invoice outstanding = amount - payments&#xa;&#xa;4. Expected cashflow = Predictive + Non-&#xa;   Predicted Invoices + Payment Plans&#xa;   (no double-counting)&#xa;&#xa;5. Predictive analytics requires 3+ paid&#xa;   invoices on a case&#xa;&#xa;6. Auto-convert: standalone invoices 30+&#xa;   days overdue → create case&#xa;&#xa;7. Cache TTL: 5 minutes, auto-invalidates&#xa;   on invoice mutations&#xa;&#xa;8. All time forecast = 90 days" vertex="1">
+          <mxGeometry height="310" width="280" x="40" y="1230" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="SQHvEnTyZvgjS33b03ED" name="Cash Flow &amp; Analytics">
+    <mxGraphModel dx="1776" dy="1338" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="rcRPpLXe8mQyC9XRr0L7-1" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;fontStyle=1" value="EQS Platform - Cash Flow &amp; Analytics Architecture" vertex="1">
+          <mxGeometry height="40" width="600" x="440" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="rcRPpLXe8mQyC9XRr0L7-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;fontStyle=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="INFLOWS (Cash Coming In)" vertex="1">
+          <mxGeometry height="40" width="400" x="40" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="rcRPpLXe8mQyC9XRr0L7-3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;b&gt;Invoices&lt;/b&gt;&lt;br&gt;Model: Invoices&lt;br&gt;- amount&lt;br&gt;- outstandingBalance&lt;br&gt;- dueDate&lt;br&gt;- status (paid/unpaid/partially_paid)&lt;br&gt;- invoiceType (case-related/standalone)" vertex="1">
+          <mxGeometry height="140" width="180" x="40" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="rcRPpLXe8mQyC9XRr0L7-4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;b&gt;Payment&lt;/b&gt;&lt;br&gt;Model: Payment&lt;br&gt;- paymentId&lt;br&gt;- paymentAmount&lt;br&gt;- paymentDate&lt;br&gt;- paymentStatus (completed/success)&lt;br&gt;- invoice (ref)&lt;br&gt;- company (ref)" vertex="1">
+          <mxGeometry height="140" width="180" x="260" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="rcRPpLXe8mQyC9XRr0L7-5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;b&gt;Remittance&lt;/b&gt;&lt;br&gt;Model: Remittance&lt;br&gt;- remittanceId&lt;br&gt;- transactionType (payment/refund/credit_note)&lt;br&gt;- amount&lt;br&gt;- paymentDate&lt;br&gt;- status (completed)&lt;br&gt;- invoice (ref)&lt;br&gt;- paymentPlan (ref)" vertex="1">
+          <mxGeometry height="160" width="200" x="40" y="330" as="geometry" />
+        </mxCell>
+        <mxCell id="rcRPpLXe8mQyC9XRr0L7-6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;b&gt;Payment Plan&lt;/b&gt;&lt;br&gt;Model: PaymentPlanArrangement&lt;br&gt;- schedule[]&lt;br&gt;&amp;nbsp;&amp;nbsp;- dueDate&lt;br&gt;&amp;nbsp;&amp;nbsp;- expectedAmount&lt;br&gt;&amp;nbsp;&amp;nbsp;- paidAmount&lt;br&gt;&amp;nbsp;&amp;nbsp;- status (pending/paid)&lt;br&gt;- status (active)" vertex="1">
+          <mxGeometry height="160" width="180" x="260" y="330" as="geometry" />
+        </mxCell>
+        <mxCell id="rcRPpLXe8mQyC9XRr0L7-7" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;fontStyle=1;fillColor=#ffe6cc;strokeColor=#d79b00;" value="OUTFLOWS (Cash Going Out)" vertex="1">
+          <mxGeometry height="40" width="400" x="540" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="rcRPpLXe8mQyC9XRr0L7-8" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fillColor=#fff2cc;strokeColor=#d6b656;" value="&lt;b&gt;Expenses&lt;/b&gt;&lt;br&gt;Model: Expense&lt;br&gt;- expenseId&lt;br&gt;- title&lt;br&gt;- amount&lt;br&gt;- dueDate&lt;br&gt;- status (Paid/Unpaid)&lt;br&gt;- paidDate&lt;br&gt;- supplier (ref)" vertex="1">
+          <mxGeometry height="140" width="180" x="540" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="rcRPpLXe8mQyC9XRr0L7-9" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fillColor=#fff2cc;strokeColor=#d6b656;" value="&lt;b&gt;AP Record&lt;/b&gt;&lt;br&gt;Model: APRecord (AccountsPayable)&lt;br&gt;- recordId&lt;br&gt;- amount&lt;br&gt;- paymentDate&lt;br&gt;- status (paid/unpaid/partially_paid)&lt;br&gt;- type (expense/credit_note)&lt;br&gt;- expense (ref)&lt;br&gt;- invoice (ref)" vertex="1">
+          <mxGeometry height="160" width="180" x="760" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="rcRPpLXe8mQyC9XRr0L7-10" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fillColor=#e1d5e7;strokeColor=#9673a6;" value="&lt;b&gt;Credit Notes (Supplier)&lt;/b&gt;&lt;br&gt;Type: credit_note in APRecord&lt;br&gt;- Reduces outflows&lt;br&gt;- Supplier refunds/credits&lt;br&gt;- E.g., CRT-NF75 (£18,665.03)" vertex="1">
+          <mxGeometry height="140" width="180" x="760" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="rcRPpLXe8mQyC9XRr0L7-11" edge="1" parent="1" source="rcRPpLXe8mQyC9XRr0L7-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" target="rcRPpLXe8mQyC9XRr0L7-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rcRPpLXe8mQyC9XRr0L7-12" connectable="0" parent="rcRPpLXe8mQyC9XRr0L7-11" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="tracked in" vertex="1">
+          <mxGeometry relative="1" x="-0.2" y="2" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rcRPpLXe8mQyC9XRr0L7-13" edge="1" parent="1" source="rcRPpLXe8mQyC9XRr0L7-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="rcRPpLXe8mQyC9XRr0L7-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rcRPpLXe8mQyC9XRr0L7-14" connectable="0" parent="rcRPpLXe8mQyC9XRr0L7-13" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="type: credit_note" vertex="1">
+          <mxGeometry relative="1" x="-0.2" y="2" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rcRPpLXe8mQyC9XRr0L7-15" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;fontStyle=1;fillColor=#f8cecc;strokeColor=#b85450;" value="ANALYTICS &amp; FORECASTING LAYER" vertex="1">
+          <mxGeometry height="40" width="900" x="40" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="rcRPpLXe8mQyC9XRr0L7-16" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" value="&lt;b&gt;Cash Flow Controller&lt;/b&gt;&lt;br&gt;File: cashFlowController.js&lt;br&gt;&lt;br&gt;&lt;b&gt;Historical Analysis (Last 30 days):&lt;/b&gt;&lt;br&gt;- Query Payment (completed/success)&lt;br&gt;- Query APRecord (all types)&lt;br&gt;- Calculate: historicalOutflow = expenses - credit_notes&lt;br&gt;- Calculate: avgWeeklyInflow, avgWeeklyOutflow&lt;br&gt;&lt;br&gt;&lt;b&gt;Weekly Forecast (12 weeks):&lt;/b&gt;&lt;br&gt;&lt;u&gt;Inflows:&lt;/u&gt;&lt;br&gt;• AI Predicted (from PredictiveAnalytics)&lt;br&gt;• Invoice-Based (invoices.dueDate)&lt;br&gt;• Payment Plan Installments&lt;br&gt;&lt;br&gt;&lt;u&gt;Outflows:&lt;/u&gt;&lt;br&gt;• Scheduled (APRecord with paymentDate)&lt;br&gt;• Credit Note Reductions (APRecord type=credit_note)&lt;br&gt;• Estimated (avgWeeklyOutflow or 30% of revenue)&lt;br&gt;&lt;br&gt;&lt;b&gt;Calculation:&lt;/b&gt;&lt;br&gt;totalOutflow = scheduledExpenses - creditNotes + estimated&lt;br&gt;netCashFlow = totalInflow - totalOutflow&lt;br&gt;cumulativeCash += netCashFlow" vertex="1">
+          <mxGeometry height="400" width="380" x="40" y="610" as="geometry" />
+        </mxCell>
+        <mxCell id="rcRPpLXe8mQyC9XRr0L7-17" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" value="&lt;b&gt;Predictive Analytics&lt;/b&gt;&lt;br&gt;Model: PredictiveAnalytics&lt;br&gt;- company (ref)&lt;br&gt;- cashFlowForecast[]&lt;br&gt;&amp;nbsp;&amp;nbsp;- weekStartDate&lt;br&gt;&amp;nbsp;&amp;nbsp;- expectedAmount&lt;br&gt;- analyticsPredictions&lt;br&gt;&amp;nbsp;&amp;nbsp;- predictedPaymentDate&lt;br&gt;&amp;nbsp;&amp;nbsp;- paymentProbability&lt;br&gt;&amp;nbsp;&amp;nbsp;- riskLevel" vertex="1">
+          <mxGeometry height="180" width="220" x="460" y="610" as="geometry" />
+        </mxCell>
+        <mxCell id="rcRPpLXe8mQyC9XRr0L7-18" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" value="&lt;b&gt;Scenario Analysis&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;Best Case:&lt;/b&gt;&lt;br&gt;+20% inflows, -10% outflows&lt;br&gt;&lt;br&gt;&lt;b&gt;Base Case:&lt;/b&gt;&lt;br&gt;Expected forecast&lt;br&gt;&lt;br&gt;&lt;b&gt;Worst Case:&lt;/b&gt;&lt;br&gt;-20% inflows, +10% outflows&lt;br&gt;&lt;br&gt;Calculates runway for each scenario" vertex="1">
+          <mxGeometry height="200" width="220" x="460" y="810" as="geometry" />
+        </mxCell>
+        <mxCell id="rcRPpLXe8mQyC9XRr0L7-19" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" value="&lt;b&gt;Runway Calculation&lt;/b&gt;&lt;br&gt;&lt;br&gt;Tracks cumulative cash position&lt;br&gt;week by week&lt;br&gt;&lt;br&gt;Runway = # weeks until&lt;br&gt;cumulativeCash &amp;lt; 0&lt;br&gt;&lt;br&gt;Status:&lt;br&gt;- Healthy: Lasts all 12 weeks&lt;br&gt;- Moderate: &amp;gt; 4 weeks&lt;br&gt;- Critical: ≤ 4 weeks" vertex="1">
+          <mxGeometry height="180" width="220" x="720" y="610" as="geometry" />
+        </mxCell>
+        <mxCell id="rcRPpLXe8mQyC9XRr0L7-20" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;fontStyle=1;fillColor=#b0e3e6;strokeColor=#0e8088;" value="REPORTS &amp; EXPORTS" vertex="1">
+          <mxGeometry height="40" width="400" x="1040" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="rcRPpLXe8mQyC9XRr0L7-21" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fillColor=#b1ddf0;strokeColor=#10739e;" value="&lt;b&gt;Aging Summary Report&lt;/b&gt;&lt;br&gt;Controller: agingSummaryController&lt;br&gt;Route: GET /analytics/aging-summary&lt;br&gt;&lt;br&gt;Groups unpaid invoices by age:&lt;br&gt;- Current (0-30 days)&lt;br&gt;- 31-60 days&lt;br&gt;- 61-90 days&lt;br&gt;- 90+ days&lt;br&gt;&lt;br&gt;Exports: Excel, CSV" vertex="1">
+          <mxGeometry height="200" width="190" x="1040" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="rcRPpLXe8mQyC9XRr0L7-22" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fillColor=#b1ddf0;strokeColor=#10739e;" value="&lt;b&gt;Cash Flow Forecast Report&lt;/b&gt;&lt;br&gt;Controller: cashFlowController&lt;br&gt;Route: GET /analytics/cash-flow-forecast&lt;br&gt;&lt;br&gt;&lt;b&gt;Summary Section:&lt;/b&gt;&lt;br&gt;- Current Cash Position&lt;br&gt;- Total Expected Inflow&lt;br&gt;- Total Expected Outflow&lt;br&gt;- Net Cash Flow&lt;br&gt;- Ending Cash Position&lt;br&gt;- Credit Note Reductions&lt;br&gt;- Runway Status&lt;br&gt;&lt;br&gt;&lt;b&gt;Weekly Forecast:&lt;/b&gt;&lt;br&gt;12 weeks of detailed projections&lt;br&gt;&lt;br&gt;&lt;b&gt;Scenario Analysis:&lt;/b&gt;&lt;br&gt;Best/Base/Worst case scenarios&lt;br&gt;&lt;br&gt;Exports: Excel, CSV, JSON" vertex="1">
+          <mxGeometry height="340" width="190" x="1250" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="rcRPpLXe8mQyC9XRr0L7-23" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fillColor=#b1ddf0;strokeColor=#10739e;" value="&lt;b&gt;Frontend UI&lt;/b&gt;&lt;br&gt;Component: Reports.jsx&lt;br&gt;&lt;br&gt;&lt;b&gt;Purple Button:&lt;/b&gt;&lt;br&gt;Aging Report&lt;br&gt;&lt;br&gt;&lt;b&gt;Blue Button:&lt;/b&gt;&lt;br&gt;Cash Flow Forecast&lt;br&gt;&lt;br&gt;Both export Excel/CSV files" vertex="1">
+          <mxGeometry height="180" width="190" x="1040" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="rcRPpLXe8mQyC9XRr0L7-24" edge="1" parent="1" source="rcRPpLXe8mQyC9XRr0L7-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#2196F3;" target="rcRPpLXe8mQyC9XRr0L7-16">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="130" y="520" />
+              <mxPoint x="20" y="520" />
+              <mxPoint x="20" y="710" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rcRPpLXe8mQyC9XRr0L7-25" connectable="0" parent="rcRPpLXe8mQyC9XRr0L7-24" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="unpaid invoices" vertex="1">
+          <mxGeometry relative="1" x="-0.2" y="2" as="geometry">
+            <mxPoint x="15" y="5" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rcRPpLXe8mQyC9XRr0L7-26" edge="1" parent="1" source="rcRPpLXe8mQyC9XRr0L7-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.2;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#4CAF50;" target="rcRPpLXe8mQyC9XRr0L7-16">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="350" y="530" />
+              <mxPoint x="116" y="530" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rcRPpLXe8mQyC9XRr0L7-27" connectable="0" parent="rcRPpLXe8mQyC9XRr0L7-26" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="historical payments" vertex="1">
+          <mxGeometry relative="1" x="-0.2" y="2" as="geometry">
+            <mxPoint x="25" y="-8" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rcRPpLXe8mQyC9XRr0L7-28" edge="1" parent="1" source="rcRPpLXe8mQyC9XRr0L7-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=0.4;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#4CAF50;" target="rcRPpLXe8mQyC9XRr0L7-16">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="192" y="450" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rcRPpLXe8mQyC9XRr0L7-29" connectable="0" parent="rcRPpLXe8mQyC9XRr0L7-28" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="scheduled installments" vertex="1">
+          <mxGeometry relative="1" x="-0.2" y="2" as="geometry">
+            <mxPoint x="18" y="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rcRPpLXe8mQyC9XRr0L7-30" edge="1" parent="1" source="rcRPpLXe8mQyC9XRr0L7-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=1;entryY=0.25;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#FF9800;" target="rcRPpLXe8mQyC9XRr0L7-16">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="700" y="290" />
+              <mxPoint x="700" y="710" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rcRPpLXe8mQyC9XRr0L7-31" connectable="0" parent="rcRPpLXe8mQyC9XRr0L7-30" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="expenses &amp; credit notes" vertex="1">
+          <mxGeometry relative="1" x="-0.2" y="2" as="geometry">
+            <mxPoint x="-25" y="-30" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rcRPpLXe8mQyC9XRr0L7-32" edge="1" parent="1" source="rcRPpLXe8mQyC9XRr0L7-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.3;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#9C27B0;dashed=1;" target="rcRPpLXe8mQyC9XRr0L7-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rcRPpLXe8mQyC9XRr0L7-33" connectable="0" parent="rcRPpLXe8mQyC9XRr0L7-32" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="uses AI predictions" vertex="1">
+          <mxGeometry relative="1" x="-0.2" y="2" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rcRPpLXe8mQyC9XRr0L7-34" edge="1" parent="1" source="rcRPpLXe8mQyC9XRr0L7-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.7;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#9C27B0;dashed=1;" target="rcRPpLXe8mQyC9XRr0L7-18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rcRPpLXe8mQyC9XRr0L7-35" connectable="0" parent="rcRPpLXe8mQyC9XRr0L7-34" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="generates scenarios" vertex="1">
+          <mxGeometry relative="1" x="-0.2" y="2" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rcRPpLXe8mQyC9XRr0L7-36" edge="1" parent="1" source="rcRPpLXe8mQyC9XRr0L7-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.8;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#9C27B0;dashed=1;" target="rcRPpLXe8mQyC9XRr0L7-19">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="344" y="600" />
+              <mxPoint x="570" y="600" />
+              <mxPoint x="570" y="800" />
+              <mxPoint x="830" y="800" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rcRPpLXe8mQyC9XRr0L7-37" connectable="0" parent="rcRPpLXe8mQyC9XRr0L7-36" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="calculates runway" vertex="1">
+          <mxGeometry relative="1" x="-0.2" y="2" as="geometry">
+            <mxPoint x="-10" y="10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rcRPpLXe8mQyC9XRr0L7-38" edge="1" parent="1" source="rcRPpLXe8mQyC9XRr0L7-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=3;strokeColor=#E91E63;" target="rcRPpLXe8mQyC9XRr0L7-22">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="230" y="1060" />
+              <mxPoint x="1010" y="1060" />
+              <mxPoint x="1010" y="340" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rcRPpLXe8mQyC9XRr0L7-39" connectable="0" parent="rcRPpLXe8mQyC9XRr0L7-38" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="generates Excel/CSV" vertex="1">
+          <mxGeometry relative="1" x="-0.2" y="2" as="geometry">
+            <mxPoint x="-170" y="-8" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rcRPpLXe8mQyC9XRr0L7-40" edge="1" parent="1" source="rcRPpLXe8mQyC9XRr0L7-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=3;strokeColor=#E91E63;" target="rcRPpLXe8mQyC9XRr0L7-21">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="240" y="205" />
+              <mxPoint x="240" y="330" />
+              <mxPoint x="1000" y="330" />
+              <mxPoint x="1000" y="270" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rcRPpLXe8mQyC9XRr0L7-41" connectable="0" parent="rcRPpLXe8mQyC9XRr0L7-40" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="unpaid invoices by age" vertex="1">
+          <mxGeometry relative="1" x="-0.2" y="2" as="geometry">
+            <mxPoint x="60" y="-8" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rcRPpLXe8mQyC9XRr0L7-42" edge="1" parent="1" source="rcRPpLXe8mQyC9XRr0L7-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#00BCD4;" target="rcRPpLXe8mQyC9XRr0L7-23">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rcRPpLXe8mQyC9XRr0L7-43" edge="1" parent="1" source="rcRPpLXe8mQyC9XRr0L7-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#00BCD4;" target="rcRPpLXe8mQyC9XRr0L7-23">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rcRPpLXe8mQyC9XRr0L7-44" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="280" width="400" x="1040" y="610" as="geometry" />
+        </mxCell>
+        <mxCell id="rcRPpLXe8mQyC9XRr0L7-45" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1" value="&lt;b&gt;KEY / LEGEND&lt;/b&gt;" vertex="1">
+          <mxGeometry height="30" width="200" x="1140" y="620" as="geometry" />
+        </mxCell>
+        <mxCell id="rcRPpLXe8mQyC9XRr0L7-46" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" value="&lt;b&gt;Data Flow:&lt;/b&gt;" vertex="1">
+          <mxGeometry height="20" width="100" x="1060" y="660" as="geometry" />
+        </mxCell>
+        <mxCell id="rcRPpLXe8mQyC9XRr0L7-47" edge="1" parent="1" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#4CAF50;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="1060" y="690" as="sourcePoint" />
+            <mxPoint x="1120" y="690" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rcRPpLXe8mQyC9XRr0L7-48" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" value="Inflow Sources" vertex="1">
+          <mxGeometry height="20" width="120" x="1130" y="680" as="geometry" />
+        </mxCell>
+        <mxCell id="rcRPpLXe8mQyC9XRr0L7-49" edge="1" parent="1" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#FF9800;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="1060" y="720" as="sourcePoint" />
+            <mxPoint x="1120" y="720" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rcRPpLXe8mQyC9XRr0L7-50" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" value="Outflow Sources" vertex="1">
+          <mxGeometry height="20" width="120" x="1130" y="710" as="geometry" />
+        </mxCell>
+        <mxCell id="rcRPpLXe8mQyC9XRr0L7-51" edge="1" parent="1" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#9C27B0;dashed=1;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="1060" y="750" as="sourcePoint" />
+            <mxPoint x="1120" y="750" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rcRPpLXe8mQyC9XRr0L7-52" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" value="Processing/Calculation" vertex="1">
+          <mxGeometry height="20" width="150" x="1130" y="740" as="geometry" />
+        </mxCell>
+        <mxCell id="rcRPpLXe8mQyC9XRr0L7-53" edge="1" parent="1" style="endArrow=classic;html=1;strokeWidth=3;strokeColor=#E91E63;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="1060" y="780" as="sourcePoint" />
+            <mxPoint x="1120" y="780" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rcRPpLXe8mQyC9XRr0L7-54" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" value="Report Generation" vertex="1">
+          <mxGeometry height="20" width="150" x="1130" y="770" as="geometry" />
+        </mxCell>
+        <mxCell id="rcRPpLXe8mQyC9XRr0L7-55" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" value="&lt;b&gt;Key Concepts:&lt;/b&gt;" vertex="1">
+          <mxGeometry height="20" width="100" x="1060" y="810" as="geometry" />
+        </mxCell>
+        <mxCell id="rcRPpLXe8mQyC9XRr0L7-56" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" value="• Credit Notes REDUCE outflows (not add to inflows)" vertex="1">
+          <mxGeometry height="20" width="360" x="1060" y="830" as="geometry" />
+        </mxCell>
+        <mxCell id="rcRPpLXe8mQyC9XRr0L7-57" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" value="• Outflow = scheduled expenses - credit notes + estimated" vertex="1">
+          <mxGeometry height="20" width="360" x="1060" y="850" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="-VK11fOFWlOjNilOtOhz" name="Case &amp; Invoice Process">
+    <mxGraphModel dx="2171" dy="1636" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="GLPSS0YrlWH00WeZZaPv-1" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;fontStyle=1" value="EQS Platform - Case &amp; Invoice Process Flow" vertex="1">
+          <mxGeometry height="40" width="600" x="660" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GLPSS0YrlWH00WeZZaPv-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=16;fontStyle=1" value="CASE CREATION" vertex="1">
+          <mxGeometry height="40" width="200" x="200" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="GLPSS0YrlWH00WeZZaPv-3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="CSV Import&#xa;(Bulk Upload)" vertex="1">
+          <mxGeometry height="60" width="120" x="200" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="GLPSS0YrlWH00WeZZaPv-4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="Manual Case&#xa;Creation" vertex="1">
+          <mxGeometry height="60" width="120" x="340" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="GLPSS0YrlWH00WeZZaPv-5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=left;verticalAlign=top;" value="&lt;b&gt;CASE (CSVMapping)&lt;/b&gt;&#xa;&#xa;• Client Reference&#xa;• Case Type (person/company)&#xa;• Case Amount&#xa;• Outstanding Balance&#xa;• Payment Status&#xa;• Lifecycle Status&#xa;• Invoices[]&#xa;• Payment Plans[]" vertex="1">
+          <mxGeometry height="160" width="220" x="220" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="GLPSS0YrlWH00WeZZaPv-6" edge="1" parent="1" source="GLPSS0YrlWH00WeZZaPv-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" target="GLPSS0YrlWH00WeZZaPv-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GLPSS0YrlWH00WeZZaPv-7" edge="1" parent="1" source="GLPSS0YrlWH00WeZZaPv-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" target="GLPSS0YrlWH00WeZZaPv-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GLPSS0YrlWH00WeZZaPv-8" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=16;fontStyle=1" value="INVOICE CREATION" vertex="1">
+          <mxGeometry height="40" width="240" x="540" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="GLPSS0YrlWH00WeZZaPv-9" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="Case-Related&#xa;Invoice" vertex="1">
+          <mxGeometry height="60" width="120" x="540" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="GLPSS0YrlWH00WeZZaPv-10" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="Standalone&#xa;Invoice" vertex="1">
+          <mxGeometry height="60" width="120" x="680" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="GLPSS0YrlWH00WeZZaPv-11" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=left;verticalAlign=top;" value="&lt;b&gt;INVOICE&lt;/b&gt;&#xa;&#xa;• Invoice Number&#xa;• Amount&#xa;• Outstanding Balance&#xa;• Due Date&#xa;• Status (paid/unpaid/partial)&#xa;• Category (payment/expense)&#xa;• Payment Link&#xa;• Case (if case-related)&#xa;• Customer Agreement (if standalone)&#xa;• Workflow (if linked)" vertex="1">
+          <mxGeometry height="200" width="280" x="520" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="GLPSS0YrlWH00WeZZaPv-12" edge="1" parent="1" source="GLPSS0YrlWH00WeZZaPv-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" target="GLPSS0YrlWH00WeZZaPv-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GLPSS0YrlWH00WeZZaPv-13" edge="1" parent="1" source="GLPSS0YrlWH00WeZZaPv-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" target="GLPSS0YrlWH00WeZZaPv-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GLPSS0YrlWH00WeZZaPv-14" edge="1" parent="1" source="GLPSS0YrlWH00WeZZaPv-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;dashed=1;strokeColor=#009900;" target="GLPSS0YrlWH00WeZZaPv-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GLPSS0YrlWH00WeZZaPv-15" connectable="0" parent="GLPSS0YrlWH00WeZZaPv-14" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="invoices[]" vertex="1">
+          <mxGeometry relative="1" x="-0.1" y="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GLPSS0YrlWH00WeZZaPv-16" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=16;fontStyle=1" value="STANDALONE → CASE CONVERSION" vertex="1">
+          <mxGeometry height="40" width="300" x="860" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="GLPSS0YrlWH00WeZZaPv-17" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;align=left;verticalAlign=top;" value="&lt;b&gt;Customer Agreement&lt;/b&gt;&#xa;&#xa;• Customer Details&#xa;• Invoices[]&#xa;• autoConvertToCase flag" vertex="1">
+          <mxGeometry height="100" width="180" x="880" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="GLPSS0YrlWH00WeZZaPv-18" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" value="Auto Convert&#xa;(Cron Job)&#xa;&#xa;Runs every hour&#xa;Checks unpaid invoices&#xa;30 days overdue" vertex="1">
+          <mxGeometry height="100" width="140" x="880" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="GLPSS0YrlWH00WeZZaPv-19" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" value="Manual&#xa;Convert to Case" vertex="1">
+          <mxGeometry height="100" width="120" x="1040" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="GLPSS0YrlWH00WeZZaPv-20" edge="1" parent="1" source="GLPSS0YrlWH00WeZZaPv-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="GLPSS0YrlWH00WeZZaPv-18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GLPSS0YrlWH00WeZZaPv-21" edge="1" parent="1" source="GLPSS0YrlWH00WeZZaPv-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="GLPSS0YrlWH00WeZZaPv-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GLPSS0YrlWH00WeZZaPv-22" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="Creates New Case&#xa;&#xa;• Copies customer data&#xa;• Links invoice to case&#xa;• Sets isConvertedToCase" vertex="1">
+          <mxGeometry height="80" width="180" x="920" y="410" as="geometry" />
+        </mxCell>
+        <mxCell id="GLPSS0YrlWH00WeZZaPv-23" edge="1" parent="1" source="GLPSS0YrlWH00WeZZaPv-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" target="GLPSS0YrlWH00WeZZaPv-22">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GLPSS0YrlWH00WeZZaPv-24" edge="1" parent="1" source="GLPSS0YrlWH00WeZZaPv-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" target="GLPSS0YrlWH00WeZZaPv-22">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GLPSS0YrlWH00WeZZaPv-25" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=16;fontStyle=1" value="PAYMENT PLANS" vertex="1">
+          <mxGeometry height="40" width="200" x="200" y="490" as="geometry" />
+        </mxCell>
+        <mxCell id="GLPSS0YrlWH00WeZZaPv-26" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="Create&#xa;Payment Plan" vertex="1">
+          <mxGeometry height="60" width="120" x="240" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="GLPSS0YrlWH00WeZZaPv-27" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=left;verticalAlign=top;" value="&lt;b&gt;Payment Plan&lt;/b&gt;&#xa;&#xa;• Case&#xa;• Company&#xa;• Start Date&#xa;• Total Amount&#xa;• Frequency (monthly/bi-weekly/weekly)&#xa;• Number of Payments&#xa;• Status (active/completed/defaulted)&#xa;• Schedule[]&#xa;  - Due Date&#xa;  - Expected Amount&#xa;  - Status (pending/paid/overdue)&#xa;  - Linked Invoice&#xa;  - Remittance Records[]" vertex="1">
+          <mxGeometry height="250" width="240" x="200" y="640" as="geometry" />
+        </mxCell>
+        <mxCell id="GLPSS0YrlWH00WeZZaPv-28" edge="1" parent="1" source="GLPSS0YrlWH00WeZZaPv-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="GLPSS0YrlWH00WeZZaPv-27">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GLPSS0YrlWH00WeZZaPv-29" edge="1" parent="1" source="GLPSS0YrlWH00WeZZaPv-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;strokeColor=#009900;" target="GLPSS0YrlWH00WeZZaPv-26">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GLPSS0YrlWH00WeZZaPv-30" connectable="0" parent="GLPSS0YrlWH00WeZZaPv-29" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="paymentPlans[]" vertex="1">
+          <mxGeometry relative="1" x="-0.1" y="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GLPSS0YrlWH00WeZZaPv-31" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=16;fontStyle=1" value="PAYMENT PROCESSING" vertex="1">
+          <mxGeometry height="40" width="280" x="520" y="490" as="geometry" />
+        </mxCell>
+        <mxCell id="GLPSS0YrlWH00WeZZaPv-32" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="GoCardless&#xa;Payment Link" vertex="1">
+          <mxGeometry height="60" width="120" x="520" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="GLPSS0YrlWH00WeZZaPv-33" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="Manual&#xa;Payment Entry" vertex="1">
+          <mxGeometry height="60" width="120" x="660" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="GLPSS0YrlWH00WeZZaPv-34" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" value="GoCardless&#xa;Webhook" vertex="1">
+          <mxGeometry height="60" width="120" x="520" y="650" as="geometry" />
+        </mxCell>
+        <mxCell id="GLPSS0YrlWH00WeZZaPv-35" edge="1" parent="1" source="GLPSS0YrlWH00WeZZaPv-32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="GLPSS0YrlWH00WeZZaPv-34">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GLPSS0YrlWH00WeZZaPv-36" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" value="Update Invoice&#xa;• Status → paid&#xa;• Outstanding Balance → 0&#xa;• Payment Date" vertex="1">
+          <mxGeometry height="80" width="140" x="520" y="740" as="geometry" />
+        </mxCell>
+        <mxCell id="GLPSS0YrlWH00WeZZaPv-37" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" value="Update Payment Plan&#xa;• Installment Status&#xa;• Link Remittance&#xa;• Check Completion" vertex="1">
+          <mxGeometry height="80" width="140" x="680" y="740" as="geometry" />
+        </mxCell>
+        <mxCell id="GLPSS0YrlWH00WeZZaPv-38" edge="1" parent="1" source="GLPSS0YrlWH00WeZZaPv-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="GLPSS0YrlWH00WeZZaPv-36">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GLPSS0YrlWH00WeZZaPv-39" edge="1" parent="1" source="GLPSS0YrlWH00WeZZaPv-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" target="GLPSS0YrlWH00WeZZaPv-36">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GLPSS0YrlWH00WeZZaPv-40" edge="1" parent="1" source="GLPSS0YrlWH00WeZZaPv-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;" target="GLPSS0YrlWH00WeZZaPv-37">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GLPSS0YrlWH00WeZZaPv-41" connectable="0" parent="GLPSS0YrlWH00WeZZaPv-40" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="If linked to plan" vertex="1">
+          <mxGeometry relative="1" x="-0.1" y="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GLPSS0YrlWH00WeZZaPv-42" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" value="Recalculate Case&#xa;Outstanding Balance&#xa;&#xa;outstandingBalance =&#xa;caseAmount - totalPaid" vertex="1">
+          <mxGeometry height="80" width="180" x="520" y="850" as="geometry" />
+        </mxCell>
+        <mxCell id="GLPSS0YrlWH00WeZZaPv-43" edge="1" parent="1" source="GLPSS0YrlWH00WeZZaPv-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="GLPSS0YrlWH00WeZZaPv-42">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GLPSS0YrlWH00WeZZaPv-44" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=16;fontStyle=1" value="PREDICTIVE ANALYTICS" vertex="1">
+          <mxGeometry height="40" width="280" x="1200" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="GLPSS0YrlWH00WeZZaPv-45" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="Trigger Predictive&#xa;Analytics&#xa;&#xa;Requirements:&#xa;• 3+ paid invoices&#xa;• Case-related invoices" vertex="1">
+          <mxGeometry height="100" width="140" x="1220" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="GLPSS0YrlWH00WeZZaPv-46" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=left;verticalAlign=top;" value="&lt;b&gt;Predictive Analytics&lt;/b&gt;&#xa;&#xa;• Case&#xa;• Company&#xa;• Customer Details&#xa;• DSO Predictions&#xa;• Payment Predictions[]&#xa;  - Invoice&#xa;  - Payment Probability&#xa;  - Predicted Payment Date&#xa;  - Risk Level&#xa;• Cash Flow Forecast[]&#xa;  - Week Start/End&#xa;  - Expected Amount&#xa;  - Contributing Invoices[]&#xa;• Payment Behavior&#xa;• Model Version" vertex="1">
+          <mxGeometry height="280" width="280" x="1200" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="GLPSS0YrlWH00WeZZaPv-47" edge="1" parent="1" source="GLPSS0YrlWH00WeZZaPv-45" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="GLPSS0YrlWH00WeZZaPv-46">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GLPSS0YrlWH00WeZZaPv-48" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" value="TensorFlow.js Models&#xa;&#xa;• Payment Likelihood&#xa;• DSO Prediction (LSTM)&#xa;• Cashflow Forecast (NN)" vertex="1">
+          <mxGeometry height="100" width="160" x="1380" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="GLPSS0YrlWH00WeZZaPv-49" edge="1" parent="1" source="GLPSS0YrlWH00WeZZaPv-45" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;" target="GLPSS0YrlWH00WeZZaPv-48">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GLPSS0YrlWH00WeZZaPv-50" connectable="0" parent="GLPSS0YrlWH00WeZZaPv-49" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Uses" vertex="1">
+          <mxGeometry relative="1" x="-0.1" y="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GLPSS0YrlWH00WeZZaPv-51" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=16;fontStyle=1" value="ANALYTICS &amp; REPORTING" vertex="1">
+          <mxGeometry height="40" width="280" x="1200" y="610" as="geometry" />
+        </mxCell>
+        <mxCell id="GLPSS0YrlWH00WeZZaPv-52" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;align=left;" value="&lt;b&gt;Expected Cashflow&lt;/b&gt;&#xa;&#xa;= Predictive Analytics Forecast&#xa;  (for cases with analytics)&#xa;+ Non-Predicted Invoices&#xa;  (outstanding balance)&#xa;+ Payment Plan Installments&#xa;  (pending/partial/overdue)&#xa;&#xa;Filtered by forecast window:&#xa;7d, 30d, 90d (allTime = 90d)" vertex="1">
+          <mxGeometry height="180" width="280" x="1200" y="670" as="geometry" />
+        </mxCell>
+        <mxCell id="GLPSS0YrlWH00WeZZaPv-53" edge="1" parent="1" source="GLPSS0YrlWH00WeZZaPv-46" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;strokeColor=#0000FF;" target="GLPSS0YrlWH00WeZZaPv-52">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GLPSS0YrlWH00WeZZaPv-54" connectable="0" parent="GLPSS0YrlWH00WeZZaPv-53" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Contributes to" vertex="1">
+          <mxGeometry relative="1" x="-0.1" y="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GLPSS0YrlWH00WeZZaPv-55" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=16;fontStyle=1" value="WORKFLOWS" vertex="1">
+          <mxGeometry height="40" width="280" x="860" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="GLPSS0YrlWH00WeZZaPv-56" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="Workflow Trigger&#xa;&#xa;• Invoice creation&#xa;• Status change&#xa;• Payment received&#xa;• Overdue" vertex="1">
+          <mxGeometry height="100" width="120" x="880" y="610" as="geometry" />
+        </mxCell>
+        <mxCell id="GLPSS0YrlWH00WeZZaPv-57" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;align=left;" value="&lt;b&gt;Workflow Stages&lt;/b&gt;&#xa;&#xa;• Initial Contact&#xa;• Follow-up&#xa;• Escalation&#xa;• External Handoff&#xa;• Legal Action&#xa;• Resolution" vertex="1">
+          <mxGeometry height="140" width="140" x="1020" y="610" as="geometry" />
+        </mxCell>
+        <mxCell id="GLPSS0YrlWH00WeZZaPv-58" edge="1" parent="1" source="GLPSS0YrlWH00WeZZaPv-56" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="GLPSS0YrlWH00WeZZaPv-57">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GLPSS0YrlWH00WeZZaPv-59" edge="1" parent="1" source="GLPSS0YrlWH00WeZZaPv-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;dashed=1;strokeColor=#FF0000;" target="GLPSS0YrlWH00WeZZaPv-56">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GLPSS0YrlWH00WeZZaPv-60" connectable="0" parent="GLPSS0YrlWH00WeZZaPv-59" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Can trigger workflow" vertex="1">
+          <mxGeometry relative="1" x="-0.1" y="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GLPSS0YrlWH00WeZZaPv-61" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=16;fontStyle=1" value="CACHING &amp; SYNC" vertex="1">
+          <mxGeometry height="40" width="280" x="860" y="790" as="geometry" />
+        </mxCell>
+        <mxCell id="GLPSS0YrlWH00WeZZaPv-62" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;align=left;" value="Cache Invalidation&#xa;&#xa;Triggers:&#xa;• Invoice create/update/delete&#xa;• Payment received&#xa;• Case update&#xa;&#xa;TTL: 5 minutes (300s)" vertex="1">
+          <mxGeometry height="120" width="240" x="880" y="850" as="geometry" />
+        </mxCell>
+        <mxCell id="GLPSS0YrlWH00WeZZaPv-63" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=14;fontStyle=1" value="LEGEND" vertex="1">
+          <mxGeometry height="30" width="200" x="1520" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="GLPSS0YrlWH00WeZZaPv-64" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="Entity / Data Model" vertex="1">
+          <mxGeometry height="40" width="200" x="1520" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="GLPSS0YrlWH00WeZZaPv-65" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="Action / Process" vertex="1">
+          <mxGeometry height="40" width="200" x="1520" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="GLPSS0YrlWH00WeZZaPv-66" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" value="System Process / Cron" vertex="1">
+          <mxGeometry height="40" width="200" x="1520" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="GLPSS0YrlWH00WeZZaPv-67" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" value="Calculation / Update" vertex="1">
+          <mxGeometry height="40" width="200" x="1520" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="GLPSS0YrlWH00WeZZaPv-68" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" value="External Service" vertex="1">
+          <mxGeometry height="40" width="200" x="1520" y="330" as="geometry" />
+        </mxCell>
+        <mxCell id="GLPSS0YrlWH00WeZZaPv-69" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=14;fontStyle=1" value="KEY NOTES" vertex="1">
+          <mxGeometry height="30" width="200" x="1520" y="410" as="geometry" />
+        </mxCell>
+        <mxCell id="GLPSS0YrlWH00WeZZaPv-70" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;align=left;verticalAlign=top;" value="1. Case outstanding balance&#xa;   = caseAmount - totalPaid&#xa;   (only PAID invoices count)&#xa;&#xa;2. Invoice outstanding balance&#xa;   = amount - payments&#xa;&#xa;3. Predictive analytics requires&#xa;   3+ paid invoices&#xa;&#xa;4. Expected cashflow prevents&#xa;   double-counting by excluding&#xa;   invoices covered by predictive&#xa;   analytics&#xa;&#xa;5. All time = 90 days forecast&#xa;&#xa;6. Cache auto-clears on invoice&#xa;   mutations" vertex="1">
+          <mxGeometry height="280" width="200" x="1520" y="450" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
