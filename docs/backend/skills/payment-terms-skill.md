@@ -1,9 +1,14 @@
 ---
-name: payment-terms-recommendation
+sidebar_position: 1
+title: Payment Terms Recommendation Skill
 description: Recommend payment terms based on customer risk profile and payment history
-version: 1.0.0
-author: ÉquiSettle Platform Team
 ---
+
+:::info Skill Metadata
+- **Name:** payment-terms-recommendation
+- **Version:** 1.0.0
+- **Author:** ÉquiSettle Platform Team
+:::
 
 # Payment Terms Recommendation
 
@@ -64,7 +69,7 @@ Based on the data gathered, categorize the customer into one of these risk level
 
 **Low Risk (Score < 30):**
 - Consistent payment history (>90% on-time rate)
-- Low average payment delay (<5 days)
+- Low average payment delay (&lt;5 days)
 - No recent disputes or issues
 - Established relationship (>6 months)
 
@@ -75,7 +80,7 @@ Based on the data gathered, categorize the customer into one of these risk level
 - Newer relationship or inconsistent patterns
 
 **High Risk (Score > 60):**
-- Poor payment history (<70% on-time rate)
+- Poor payment history (&lt;70% on-time rate)
 - Significant payment delays (>15 days average)
 - Frequent disputes or non-responsiveness
 - New customer with no history
