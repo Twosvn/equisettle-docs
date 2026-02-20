@@ -1,3 +1,8 @@
+---
+id: pure-ledger
+title: Pure Ledger Architecture
+---
+
 # AR Pure Ledger: Architectural Specification
 
 ## Overview

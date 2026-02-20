@@ -1,3 +1,8 @@
+---
+id: ledger-implementation-guide
+title: Ledger Implementation Guide
+---
+
 # Pure Ledger Implementation - Complete
 
 **Status:** ✅ Implemented (Needs Testing)

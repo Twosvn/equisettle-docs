@@ -1,3 +1,8 @@
+---
+id: accounting-analysis
+title: AR Accounting Analysis
+---
+
 # AR & Accounting Standards Analysis
 
 Analysis of the EQS platform's case, invoice, and payment plan setup against standard accounting and AR practices.
