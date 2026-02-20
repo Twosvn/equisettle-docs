@@ -1,0 +1,455 @@
+<mxfile host="app.diagrams.net" modified="2025-01-20T14:00:00.000Z" agent="Claude" version="24.0.0">
+  <diagram name="Case and Invoice Process Flow" id="case-invoice-flow">
+    <mxGraphModel dx="1634" dy="890" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="1400" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Title -->
+        <mxCell id="title" value="EQS Platform - Complete System Architecture" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=26;fontStyle=1;fontColor=#003366;" vertex="1" parent="1">
+          <mxGeometry x="500" y="10" width="800" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- CUSTOMER AGREEMENT SECTION -->
+        <mxCell id="customer-agreement-section" value="CUSTOMER AGREEMENTS" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=16;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="40" y="80" width="260" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Customer Agreement Entity -->
+        <mxCell id="customer-agreement" value="&lt;b&gt;Customer Agreement&lt;/b&gt;&#xa;&#xa;• Customer ID&#xa;• First Name / Last Name&#xa;• Business Name&#xa;• Email / Phone&#xa;• Address&#xa;• Status (active/inactive)&#xa;• Invoices[]&#xa;• autoConvertToCase flag&#xa;• Company" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="60" y="140" width="220" height="200" as="geometry" />
+        </mxCell>
+
+        <!-- Create Customer Agreement -->
+        <mxCell id="create-agreement" value="Create&#xa;Customer Agreement" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="110" y="360" width="120" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="arrow-create-agreement" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="create-agreement" target="customer-agreement">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- CASE CREATION SECTION -->
+        <mxCell id="case-section-title" value="CASE MANAGEMENT" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=16;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="340" y="80" width="260" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- CSV Import -->
+        <mxCell id="csv-import" value="CSV Import&#xa;(Bulk Upload)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="340" y="140" width="120" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Manual Case Creation -->
+        <mxCell id="manual-case" value="Manual Case&#xa;Creation" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="480" y="140" width="120" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Case Entity -->
+        <mxCell id="case-entity" value="&lt;b&gt;CASE (CSVMapping)&lt;/b&gt;&#xa;&#xa;• Client Reference&#xa;• Case Type (person/company)&#xa;• Case Amount&#xa;• Outstanding Balance&#xa;• Payment Status&#xa;• Lifecycle Status&#xa;• Invoices[]&#xa;• Payment Plans[]&#xa;• Company" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="355" y="230" width="230" height="190" as="geometry" />
+        </mxCell>
+
+        <mxCell id="arrow-csv-case" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="csv-import" target="case-entity">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="arrow-manual-case" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="manual-case" target="case-entity">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- INVOICE CREATION SECTION -->
+        <mxCell id="invoice-section-title" value="INVOICE MANAGEMENT" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=16;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="640" y="80" width="300" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Case-Related Invoice -->
+        <mxCell id="case-related-invoice" value="Case-Related&#xa;Invoice" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="660" y="140" width="120" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Standalone Invoice -->
+        <mxCell id="standalone-invoice" value="Standalone&#xa;Invoice" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="800" y="140" width="120" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Invoice Entity -->
+        <mxCell id="invoice-entity" value="&lt;b&gt;INVOICE&lt;/b&gt;&#xa;&#xa;• Invoice Number&#xa;• Amount&#xa;• Outstanding Balance (default = amount)&#xa;• Due Date&#xa;• Status (paid/unpaid/partial)&#xa;• Category (payment/expense/AR)&#xa;• Payment Link&#xa;• Case (if case-related)&#xa;• Customer Agreement (if standalone)&#xa;• Workflow (if linked)&#xa;• Payment Plan (if linked)&#xa;• isConvertedToCase (timestamp)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="640" y="230" width="300" height="240" as="geometry" />
+        </mxCell>
+
+        <mxCell id="arrow-case-invoice" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="case-related-invoice" target="invoice-entity">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="arrow-standalone-invoice" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="standalone-invoice" target="invoice-entity">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Link case to invoice -->
+        <mxCell id="link-case-invoice" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.3;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;dashed=1;strokeColor=#009900;strokeWidth=2;" edge="1" parent="1" source="case-entity" target="invoice-entity">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="link-label" value="invoices[]" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontStyle=1;fontSize=11;" vertex="1" connectable="0" parent="link-case-invoice">
+          <mxGeometry x="-0.1" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Link customer agreement to standalone invoice -->
+        <mxCell id="link-agreement-invoice" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;dashed=1;strokeColor=#CC0000;strokeWidth=2;" edge="1" parent="1" source="customer-agreement" target="invoice-entity">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="320" y="190"/>
+              <mxPoint x="320" y="410"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="agreement-invoice-label" value="invoices[]&#xa;(standalone)" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontStyle=1;fontSize=11;" vertex="1" connectable="0" parent="link-agreement-invoice">
+          <mxGeometry x="-0.1" y="1" relative="1" as="geometry">
+            <mxPoint x="15" y="10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- CONVERT TO CASE SECTION -->
+        <mxCell id="convert-section-title" value="STANDALONE → CASE CONVERSION" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=16;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="60" y="460" width="300" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Auto Convert Logic -->
+        <mxCell id="auto-convert" value="Auto Convert&#xa;(Cron Job)&#xa;&#xa;Runs every hour&#xa;Checks unpaid invoices&#xa;30 days overdue" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="80" y="520" width="120" height="100" as="geometry" />
+        </mxCell>
+
+        <!-- Manual Convert -->
+        <mxCell id="manual-convert" value="Manual&#xa;Convert to Case" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="220" y="520" width="120" height="100" as="geometry" />
+        </mxCell>
+
+        <mxCell id="arrow-agreement-auto" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="customer-agreement" target="auto-convert">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="115" y="480"/>
+              <mxPoint x="140" y="480"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="arrow-agreement-manual" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="customer-agreement" target="manual-convert">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="225" y="480"/>
+              <mxPoint x="280" y="480"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Converted Case -->
+        <mxCell id="converted-case" value="Creates New Case&#xa;&#xa;• Copies customer data&#xa;• Links invoice to case&#xa;• Sets isConvertedToCase" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="120" y="650" width="180" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="arrow-auto-converted" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="auto-convert" target="converted-case">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="arrow-manual-converted" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="manual-convert" target="converted-case">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Arrow from converted case back to case entity -->
+        <mxCell id="arrow-converted-to-case" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;strokeColor=#009900;strokeWidth=2;" edge="1" parent="1" source="converted-case" target="case-entity">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="320" y="690"/>
+              <mxPoint x="320" y="450"/>
+              <mxPoint x="413" y="450"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- PAYMENT PLAN SECTION -->
+        <mxCell id="payment-plan-title" value="PAYMENT PLANS" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=16;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="370" y="460" width="200" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Payment Plan Creation -->
+        <mxCell id="create-plan" value="Create&#xa;Payment Plan" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="410" y="520" width="120" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Payment Plan Entity -->
+        <mxCell id="payment-plan-entity" value="&lt;b&gt;Payment Plan&lt;/b&gt;&#xa;&#xa;• Case&#xa;• Company&#xa;• Start Date / Total Amount&#xa;• Frequency (monthly/bi-weekly/weekly)&#xa;• Number of Payments&#xa;• Status (active/completed/defaulted)&#xa;• Schedule[]&#xa;  - Schedule ID, Due Date&#xa;  - Expected Amount&#xa;  - Status (pending/paid/overdue)&#xa;  - Linked Invoice&#xa;  - Remittance Records[]&#xa;  - Paid Amount / Paid Date" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="360" y="610" width="220" height="270" as="geometry" />
+        </mxCell>
+
+        <mxCell id="arrow-create-plan" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="create-plan" target="payment-plan-entity">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Link case to payment plan -->
+        <mxCell id="link-case-plan" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;strokeColor=#009900;strokeWidth=2;" edge="1" parent="1" source="case-entity" target="create-plan">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="link-plan-label" value="paymentPlans[]" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontStyle=1;fontSize=11;" vertex="1" connectable="0" parent="link-case-plan">
+          <mxGeometry x="-0.1" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- PAYMENT PROCESSING SECTION -->
+        <mxCell id="payment-section-title" value="PAYMENT PROCESSING" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=16;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="640" y="510" width="300" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Payment Methods -->
+        <mxCell id="gocardless" value="GoCardless&#xa;Payment Link" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="660" y="570" width="120" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="manual-payment" value="Manual&#xa;Payment Entry" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="800" y="570" width="120" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Payment Flow -->
+        <mxCell id="payment-webhook" value="GoCardless&#xa;Webhook" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="660" y="660" width="120" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="arrow-gc-webhook" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="gocardless" target="payment-webhook">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Update Invoice Status -->
+        <mxCell id="update-invoice-status" value="Update Invoice&#xa;• Status → paid&#xa;• Outstanding Balance → 0&#xa;• Payment Date" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="660" y="750" width="140" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="update-plan-status" value="Update Payment Plan&#xa;• Installment Status&#xa;• Link Remittance&#xa;• Check Completion" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="820" y="750" width="140" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="arrow-webhook-invoice" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="payment-webhook" target="update-invoice-status">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="arrow-manual-invoice" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="manual-payment" target="update-invoice-status">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="arrow-payment-plan" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;" edge="1" parent="1" source="update-invoice-status" target="update-plan-status">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="plan-label" value="If linked to plan" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;" vertex="1" connectable="0" parent="arrow-payment-plan">
+          <mxGeometry x="-0.1" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Recalculate Case Balance -->
+        <mxCell id="recalc-case" value="Recalculate Case&#xa;Outstanding Balance&#xa;&#xa;outstandingBalance =&#xa;caseAmount - totalPaid&#xa;&#xa;(Only PAID invoices)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="660" y="860" width="180" height="100" as="geometry" />
+        </mxCell>
+
+        <mxCell id="arrow-invoice-recalc" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#FF6600;" edge="1" parent="1" source="update-invoice-status" target="recalc-case">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- OVERALL ANALYTICS SECTION -->
+        <mxCell id="overall-analytics-title" value="OVERALL ANALYTICS DASHBOARD" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#003366;strokeColor=#001f3f;fontSize=16;fontStyle=1;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="1020" y="80" width="740" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Analytics Aggregation Box -->
+        <mxCell id="analytics-aggregation" value="&lt;b&gt;ANALYTICS AGGREGATION ENGINE&lt;/b&gt;&#xa;&#xa;Pulls data from:" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;align=left;verticalAlign=top;fontSize=13;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="1040" y="140" width="700" height="230" as="geometry" />
+        </mxCell>
+
+        <!-- Data Sources -->
+        <mxCell id="source-cases" value="CASES&#xa;• Total Cases&#xa;• Total Amount&#xa;• Outstanding Balance&#xa;• Payment Status" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1060" y="180" width="130" height="90" as="geometry" />
+        </mxCell>
+
+        <mxCell id="source-invoices" value="INVOICES&#xa;• Paid Invoices (collected)&#xa;• Unpaid Invoices&#xa;• Outstanding Balances&#xa;• Payment Trends&#xa;• PTP Invoices" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1210" y="180" width="130" height="90" as="geometry" />
+        </mxCell>
+
+        <mxCell id="source-plans" value="PAYMENT PLANS&#xa;• Active Plans&#xa;• Pending Installments&#xa;• Expected Amounts&#xa;• Due Dates" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1360" y="180" width="130" height="90" as="geometry" />
+        </mxCell>
+
+        <mxCell id="source-predictive" value="PREDICTIVE&#xa;ANALYTICS&#xa;• AI Forecasts&#xa;• Payment Probability&#xa;• DSO Predictions&#xa;• Cashflow Forecast" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1510" y="180" width="130" height="90" as="geometry" />
+        </mxCell>
+
+        <mxCell id="source-cache" value="REDIS CACHE&#xa;• 5 min TTL&#xa;• Auto-invalidate on:&#xa;  - Invoice mutations&#xa;  - Payment received&#xa;  - Case updates" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1060" y="285" width="580" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- Calculated Metrics -->
+        <mxCell id="calculated-metrics" value="&lt;b&gt;CALCULATED METRICS&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=13;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="1040" y="400" width="700" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Metric Cards -->
+        <mxCell id="metric1" value="&lt;b&gt;Total Portfolio Value&lt;/b&gt;&#xa;Sum of all case amounts&#xa;(excludes closed cases)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1060" y="450" width="130" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="metric2" value="&lt;b&gt;Outstanding Balance&lt;/b&gt;&#xa;Sum of case&#xa;outstandingBalance&#xa;(only paid invoices count)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="1210" y="450" width="130" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="metric3" value="&lt;b&gt;Amount Recovered&lt;/b&gt;&#xa;Sum of all paid invoice&#xa;amounts" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1360" y="450" width="130" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="metric4" value="&lt;b&gt;Collection Rate&lt;/b&gt;&#xa;(Paid invoices /&#xa;Total invoices) * 100" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1510" y="450" width="130" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- Expected Cashflow - HIGHLIGHTED -->
+        <mxCell id="expected-cashflow-metric" value="&lt;b&gt;Expected Cashflow&lt;/b&gt;&#xa;&#xa;= Predictive Analytics&#xa;+ Non-Predicted Invoices&#xa;+ Payment Plan Installments&#xa;&#xa;• Filters by forecast window&#xa;• No double-counting&#xa;• Duration: 7d, 30d, 90d" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFE6CC;strokeColor=#FF6600;fontSize=11;fontStyle=1;strokeWidth=3;" vertex="1" parent="1">
+          <mxGeometry x="1060" y="560" width="580" height="120" as="geometry" />
+        </mxCell>
+
+        <!-- Additional Analytics -->
+        <mxCell id="additional-analytics" value="&lt;b&gt;ADDITIONAL ANALYTICS&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=13;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="1040" y="710" width="700" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="analytics-list" value="• Payment Status Distribution (by time period)&#xa;• Top Cases by Amount&#xa;• Payment Trends (7d, 30d, 90d, allTime)&#xa;• Aging Buckets (overdue invoice tracking)&#xa;• PTP (Promise to Pay) Invoices&#xa;• Year-over-Year Comparisons&#xa;• Follow-ups Tracking" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=left;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1060" y="760" width="580" height="120" as="geometry" />
+        </mxCell>
+
+        <!-- Data Flow Arrows to Analytics -->
+        <mxCell id="arrow-case-to-analytics" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;strokeColor=#0066CC;strokeWidth=2;dashed=1;" edge="1" parent="1" source="case-entity" target="source-cases">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1000" y="325"/>
+              <mxPoint x="1000" y="203"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="arrow-invoice-to-analytics" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#0066CC;strokeWidth=2;dashed=1;" edge="1" parent="1" source="invoice-entity" target="source-invoices">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1000" y="290"/>
+              <mxPoint x="1000" y="225"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="arrow-plan-to-analytics" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#0066CC;strokeWidth=2;dashed=1;" edge="1" parent="1" source="payment-plan-entity" target="source-plans">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1000" y="678"/>
+              <mxPoint x="1000" y="225"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- PREDICTIVE ANALYTICS SECTION -->
+        <mxCell id="predictive-title" value="PREDICTIVE ANALYTICS (AI)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=16;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="1020" y="920" width="380" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Trigger Predictive -->
+        <mxCell id="trigger-predictive" value="Trigger Predictive&#xa;Analytics&#xa;&#xa;Requirements:&#xa;• 3+ paid invoices&#xa;• Case-related invoices" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="1060" y="980" width="140" height="100" as="geometry" />
+        </mxCell>
+
+        <!-- Predictive Analytics Entity -->
+        <mxCell id="predictive-entity" value="&lt;b&gt;Predictive Analytics&lt;/b&gt;&#xa;&#xa;• Case / Company&#xa;• Payment Predictions[]&#xa;  - Invoice&#xa;  - Payment Probability&#xa;  - Risk Level&#xa;• Cash Flow Forecast[]&#xa;  - Week Start/End&#xa;  - Expected Amount&#xa;  - Contributing Invoices[]" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="1100" width="240" height="180" as="geometry" />
+        </mxCell>
+
+        <mxCell id="arrow-trigger-predictive" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="trigger-predictive" target="predictive-entity">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- TensorFlow Models -->
+        <mxCell id="tensorflow" value="TensorFlow.js Models&#xa;&#xa;• Payment Likelihood&#xa;• DSO Prediction (LSTM)&#xa;• Cashflow Forecast (NN)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="1220" y="980" width="160" height="100" as="geometry" />
+        </mxCell>
+
+        <mxCell id="arrow-predictive-tf" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;" edge="1" parent="1" source="trigger-predictive" target="tensorflow">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tf-label" value="Uses" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="arrow-predictive-tf">
+          <mxGeometry x="-0.1" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Arrow to analytics -->
+        <mxCell id="arrow-predictive-to-source" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeColor=#0066CC;strokeWidth=2;dashed=1;" edge="1" parent="1" source="predictive-entity" target="source-predictive">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1575" y="1190"/>
+              <mxPoint x="1575" y="270"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- WORKFLOWS SECTION -->
+        <mxCell id="workflow-title" value="WORKFLOWS &amp; AUTOMATION" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=16;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="1440" y="920" width="320" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Workflow Trigger -->
+        <mxCell id="workflow-trigger" value="Workflow Trigger&#xa;&#xa;• Invoice creation&#xa;• Status change&#xa;• Payment received&#xa;• Overdue" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="1460" y="980" width="120" height="100" as="geometry" />
+        </mxCell>
+
+        <!-- Workflow Stages -->
+        <mxCell id="workflow-stages" value="&lt;b&gt;Workflow Stages&lt;/b&gt;&#xa;&#xa;• Initial Contact&#xa;• Follow-up&#xa;• Escalation&#xa;• External Handoff&#xa;• Legal Action&#xa;• Resolution" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;align=left;" vertex="1" parent="1">
+          <mxGeometry x="1600" y="980" width="140" height="140" as="geometry" />
+        </mxCell>
+
+        <mxCell id="arrow-workflow" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="workflow-trigger" target="workflow-stages">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Legend -->
+        <mxCell id="legend-title" value="LEGEND" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="40" y="1000" width="280" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="legend-entity" value="Entity / Data Model" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1040" width="120" height="35" as="geometry" />
+        </mxCell>
+
+        <mxCell id="legend-action" value="Action / Process" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="190" y="1040" width="120" height="35" as="geometry" />
+        </mxCell>
+
+        <mxCell id="legend-system" value="System / Cron" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1085" width="120" height="35" as="geometry" />
+        </mxCell>
+
+        <mxCell id="legend-calculation" value="Calculation" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="190" y="1085" width="120" height="35" as="geometry" />
+        </mxCell>
+
+        <mxCell id="legend-external" value="External Service" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1130" width="120" height="35" as="geometry" />
+        </mxCell>
+
+        <mxCell id="legend-customer" value="Customer Data" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="190" y="1130" width="120" height="35" as="geometry" />
+        </mxCell>
+
+        <!-- Key Notes -->
+        <mxCell id="notes-title" value="KEY NOTES" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="40" y="1190" width="280" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="notes-content" value="1. Customer Agreement holds standalone&#xa;   invoices (not linked to cases)&#xa;&#xa;2. Case outstanding = caseAmount - totalPaid&#xa;   (only PAID invoices count)&#xa;&#xa;3. Invoice outstanding = amount - payments&#xa;&#xa;4. Expected cashflow = Predictive + Non-&#xa;   Predicted Invoices + Payment Plans&#xa;   (no double-counting)&#xa;&#xa;5. Predictive analytics requires 3+ paid&#xa;   invoices on a case&#xa;&#xa;6. Auto-convert: standalone invoices 30+&#xa;   days overdue → create case&#xa;&#xa;7. Cache TTL: 5 minutes, auto-invalidates&#xa;   on invoice mutations&#xa;&#xa;8. All time forecast = 90 days" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;align=left;verticalAlign=top;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1230" width="280" height="310" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

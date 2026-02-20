@@ -1,4 +1,4 @@
-import type {SidebarsConfig} from '@docusaurus/plugin-content-docs';
+import type { SidebarsConfig } from '@docusaurus/plugin-content-docs';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -31,6 +31,9 @@ const sidebars: SidebarsConfig = {
       label: '🏗️ Architecture',
       items: [
         'backend/architecture/overview',
+        'backend/architecture/pure-ledger',
+        'backend/architecture/ledger-implementation-guide',
+        'backend/architecture/accounting-analysis',
         'backend/architecture/unified-orchestrator',
         'backend/architecture/agentic-platform',
       ],
@@ -107,6 +110,96 @@ const sidebars: SidebarsConfig = {
       label: '🚀 Overview',
       items: [
         'deployment/overview',
+      ],
+    },
+  ],
+
+  // Knowledge Base sidebar - user-facing documentation
+  knowledgeBaseSidebar: [
+    {
+      type: 'category',
+      label: '📖 Getting Started',
+      items: [
+        'knowledge-base/overview',
+        'knowledge-base/platform-overview',
+      ],
+    },
+    {
+      type: 'category',
+      label: '📁 Cases',
+      items: [
+        'knowledge-base/cases/understanding-cases',
+        'knowledge-base/cases/creating-cases',
+        'knowledge-base/cases/managing-cases',
+        'knowledge-base/cases/multi-invoice-cases',
+      ],
+    },
+    {
+      type: 'category',
+      label: '🧾 Invoices',
+      items: [
+        'knowledge-base/invoices/understanding-invoices',
+        'knowledge-base/invoices/managing-invoices',
+        'knowledge-base/invoices/payment-links',
+        'knowledge-base/invoices/accounting-integrations',
+      ],
+    },
+    {
+      type: 'category',
+      label: '📅 Payment Plans',
+      items: [
+        'knowledge-base/payment-plans/setting-up-payment-plans',
+        'knowledge-base/payment-plans/managing-payment-plans',
+      ],
+    },
+    {
+      type: 'category',
+      label: '🔔 Reminders & Communications',
+      items: [
+        'knowledge-base/reminders/how-reminders-work',
+        'knowledge-base/reminders/channels-and-templates',
+        'knowledge-base/reminders/customising-reminders',
+      ],
+    },
+    {
+      type: 'category',
+      label: '⚙️ Workflows',
+      items: [
+        'knowledge-base/workflows/understanding-workflows',
+        'knowledge-base/workflows/stages-and-progression',
+        'knowledge-base/workflows/documents-and-approvals',
+      ],
+    },
+    {
+      type: 'category',
+      label: '📊 Analytics & Reporting',
+      items: [
+        'knowledge-base/analytics/dashboard-overview',
+        'knowledge-base/analytics/invoice-analytics',
+        'knowledge-base/analytics/metrics-explained',
+      ],
+    },
+    {
+      type: 'category',
+      label: '👥 Customers & Disputes',
+      items: [
+        'knowledge-base/customers/customer-agreements',
+        'knowledge-base/customers/monthly-statements',
+        'knowledge-base/disputes/raising-disputes',
+      ],
+    },
+    {
+      type: 'category',
+      label: '🏢 Teams & Portfolios',
+      items: [
+        'knowledge-base/teams/teams-and-portfolios',
+      ],
+    },
+    {
+      type: 'category',
+      label: '🏦 Bank Reconciliation',
+      items: [
+        'knowledge-base/reconciliation/bank-reconciliation',
       ],
     },
   ],

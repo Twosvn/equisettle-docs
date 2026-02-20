@@ -14,6 +14,11 @@ const config: Config = {
     v4: true, // Improve compatibility with the upcoming Docusaurus v4
   },
 
+  markdown: {
+    mermaid: true,
+  },
+  themes: ['@docusaurus/theme-mermaid'],
+
 
   // Set the production url of your site here
   url: 'https://equisettle-docs.vercel.app',
@@ -87,6 +92,12 @@ const config: Config = {
           label: 'Deployment',
         },
         {
+          type: 'docSidebar',
+          sidebarId: 'knowledgeBaseSidebar',
+          position: 'left',
+          label: 'Knowledge Base',
+        },
+        {
           type: 'search',
           position: 'right',
         },
@@ -109,6 +120,10 @@ const config: Config = {
             {
               label: 'Deployment',
               to: '/docs/deployment/overview',
+            },
+            {
+              label: 'Knowledge Base',
+              to: '/docs/knowledge-base/overview',
             },
           ],
         },
