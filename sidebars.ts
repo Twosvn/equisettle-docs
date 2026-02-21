@@ -44,7 +44,6 @@ const sidebars: SidebarsConfig = {
       items: [
         'backend/integrations/overview',
         'backend/integrations/quickbooks',
-        'backend/integrations/ai-integration',
       ],
     },
     {
@@ -65,15 +64,9 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: '🤖 Agentic AI',
+      label: '🤖 Agentic AI (Bedrock)',
       items: [
-        'backend/AGENTIC_SETUP',
-        'backend/AGENTIC_QUICKSTART',
-        'backend/TEST_AGENTIC',
-        'backend/COST_OPTIMIZATION',
-        'backend/USING_CLAUDE',
-        'backend/WHAT_IT_DOES',
-        'backend/FRONTEND_INTEGRATION',
+        'ai/bedrock-orchestration'
       ],
     },
     {

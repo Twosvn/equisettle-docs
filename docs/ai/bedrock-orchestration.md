@@ -1,10 +1,13 @@
 # Bedrock Multi-Agent Orchestration
 
-The EQUIS platform has evolved from a single tool-using bot to a **Truly Agentic Multi-Agent System**. This architecture uses a "Supervisor-Specialist" model to ensure high precision, security, and scalability.
+The EQUIS platform has evolved from a single tool-using bot to a **Truly Agentic Multi-Agent System**. This architecture uses **Anthropic Claude 3** (Haiku/Sonnet) via **Amazon Bedrock** to provide a "Supervisor-Specialist" model for maximum precision.
 
 ## 🏗️ Architecture
 
-The following diagram illustrates how the Supervisor orchestrates specialized agents to fulfill complex user requests.
+The following diagram illustrates how the Supervisor orchestrates specialized agents to fulfill complex user requests. 
+
+> [!TIP]
+> You can download the [bedrock-multi-agent.drawio](file:///Users/dos/eqs-production/equisettle-docs/static/img/bedrock-multi-agent.drawio) file to edit this diagram.
 
 ```mermaid
 graph TD
