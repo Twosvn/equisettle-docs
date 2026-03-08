@@ -102,19 +102,21 @@ Customer relationship management platform integrations for enhanced client data 
 
 ### 💳 Payment Processing
 
-Multiple payment gateway integrations for flexible payment collection options.
+Three payment providers, all routing through the same `webhookTransactionService.handlePaymentSuccess` ledger path.
 
-| Integration | Features | Sync Type | Webhooks |
-|-------------|----------|-----------|----------|
-| **[GoCardless](./gocardless)** | Direct Debits, Mandates, Refunds | Real-time | ✅ |
-| **[Stripe](./stripe)** | Card Payments, Subscriptions | Real-time | ✅ |
-| **[ChargeBee](./chargebee)** | Subscription Billing, Dunning | Real-time | ✅ |
+| Integration | Use Case | Debtor Setup Required | Webhooks |
+|-------------|----------|-----------------------|----------|
+| **[GoCardless](./gocardless)** | Payment plans, recurring DD | Mandate setup | ✅ |
+| **[Stripe Connect](./stripe-connect)** | One-off card payments | None | ✅ |
+| **[Yapily Open Banking](./yapily)** | Instant bank transfer | None | Pending (private beta) |
+
+All three share a single public payment page at `/pay/:invoiceId`. The page shows only the methods configured for the creditor's company.
 
 #### Key Capabilities
-- **Payment Collection**: Multiple payment method support
-- **Automated Retries**: Smart payment retry logic
-- **Mandate Management**: Direct debit authorization handling
-- **Subscription Management**: Recurring payment processing
+- **Universal Payment Link**: One URL works for all providers — `invoice.paymentLink = /pay/:invoiceId`
+- **Zero Debtor Friction**: Stripe and Yapily require no debtor account or setup
+- **Destination Charges**: Stripe Connect and Yapily route money directly to creditor — Equisettle never holds funds
+- **Idempotent Ledger**: All payment confirmations route through `FinancialTransaction` with `processorReference` deduplication
 
 ### 📧 Communication Platforms
 

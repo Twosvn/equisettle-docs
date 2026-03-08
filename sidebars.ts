@@ -44,6 +44,8 @@ const sidebars: SidebarsConfig = {
       items: [
         'backend/integrations/overview',
         'backend/integrations/quickbooks',
+        'backend/integrations/stripe-connect',
+        'backend/integrations/yapily',
       ],
     },
     {
@@ -52,6 +54,7 @@ const sidebars: SidebarsConfig = {
       items: [
         'backend/features/csv-mapping',
         'backend/features/scheduler',
+        'backend/features/payment-page',
       ],
     },
     {
